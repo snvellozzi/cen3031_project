@@ -37,9 +37,7 @@ class _NavigationState extends State<Navigation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Bottom Navigation Bar'),
-      ),
+
       body: IndexedStack(
         index: _selectedIndex,
         children: _widgetOptions,
