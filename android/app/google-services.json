@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1013487462831",
+    "project_id": "scrummybears-1e9b8",
+    "storage_bucket": "scrummybears-1e9b8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1013487462831:android:6689979b09e3b78718a75a",
+        "android_client_info": {
+          "package_name": "com.example.scrummy_bears"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1013487462831-dql4osf3pkpbbiqf4rd6co5prohko5s5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6J2aH-hDPYH56SNgv-Gi2tm6qQkPv40I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1013487462831-dql4osf3pkpbbiqf4rd6co5prohko5s5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
