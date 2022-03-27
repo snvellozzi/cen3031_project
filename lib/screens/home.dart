@@ -46,7 +46,7 @@ class GridDashboard extends StatelessWidget {
               decoration: BoxDecoration(
 
                   color: Color.fromRGBO(0, 0, 0, 0.2),
-                  border: Border.all(color: Color.fromARGB(255, 228, 225, 231), width: 4),
+                  border: Border.all(color: Colors.white, width: 2),
                   borderRadius: BorderRadius.circular(30)),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
