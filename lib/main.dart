@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:scrummy_bears/screens/quiz.dart';
 import 'package:scrummy_bears/screens/results.dart';
 import 'package:scrummy_bears/screens/home.dart';
+import 'package:google_fonts/google_fonts.dart';
+
 
 void main() {
   runApp(MyApp());
