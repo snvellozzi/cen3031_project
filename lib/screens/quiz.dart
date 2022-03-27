@@ -52,32 +52,50 @@ class _QuizAppState extends State<QuizApp> {
               Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: Container(
+                  //width: 220,
+                  height: 120,
                   decoration: BoxDecoration(
-                      color: Colors.transparent,
-                      borderRadius: BorderRadius.circular(14.4),
-                      border: Border.all(
-                          color: Colors.blueGrey.shade400,
-                          style: BorderStyle.solid)),
-                  height: 120.0,
+                      //color: Colors.transparent,
+                      //borderRadius: BorderRadius.circular(30),
+                      borderRadius: const BorderRadius.all(Radius.circular(20)),
+                      gradient: LinearGradient(
+                          //begin: Alignment.topLeft,
+                          //end: Alignment.bottomRight,
+                        stops: [
+                          0.0,
+                          0.3,
+                          0.9,
+                        ],
+                          colors: [
+                            Colors.pinkAccent,
+                           Colors.purple,
+                           Colors.blue
+                           // Color.fromRGBO(159, 47, 255, 1),
+                            //Color.fromRGBO(11, 177, 211, 1)
+
+                          ])),
+
                   child: Center(
                       child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
                       questionBank[_currentQuestionIndex].questionText,
-//                      style: TextStyle(fontSize: 16.9,
-//                          color: Colors.white),
+                      style: TextStyle(fontSize: 16.9,
+                          color: Colors.white),
                     ),
                   )),
                 ),
               ),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                
+                mainAxisAlignment: MainAxisAlignment.center,
+
                 children: <Widget>[
                   
                   RaisedButton(
                     onPressed: () => _prevQuestion(),
                     color: Colors.blueGrey.shade900,
+
                     child: Icon(
                       Icons.arrow_back,
                       color: Colors.white,
