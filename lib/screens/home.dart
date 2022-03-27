@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+
 
 
 
 class GridDashboard extends StatelessWidget {
   Items item1 = new Items(
-      title: "Profiles",
+      title: "Profile",
       subtitle: "",
       event: "",
       img: "assets/todo.png");
@@ -16,7 +19,7 @@ class GridDashboard extends StatelessWidget {
     img: "assets/todo.png",
   );
   Items item3 = new Items(
-    title: "Results",
+    title: "Past Quiz Results",
     subtitle: "",
     event: "",
     img: "assets/todo.png",
@@ -33,16 +36,19 @@ class GridDashboard extends StatelessWidget {
     List<Items> myList = [item1, item2, item3, item4];
     return Flexible(
       child: GridView.count(
-          childAspectRatio: 1.0,
+          childAspectRatio: 4,
           padding: EdgeInsets.only(left: 16, right: 16),
-          crossAxisCount: 2,
+          crossAxisCount: 1,
           crossAxisSpacing: 18,
           mainAxisSpacing: 18,
           children: myList.map((data) {
             return Container(
               decoration: BoxDecoration(
-                  color: Colors.white, borderRadius: BorderRadius.circular(10)),
-              child: Column(
+
+                  color: Color.fromRGBO(0, 0, 0, 0.2),
+                  border: Border.all(color: Color.fromARGB(255, 228, 225, 231), width: 4),
+                  borderRadius: BorderRadius.circular(30)),
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Image.asset(
@@ -54,14 +60,14 @@ class GridDashboard extends StatelessWidget {
                   ),
                   Text(
                     data.title,
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
                     // style: GoogleFonts.openSans(
                     //     textStyle: TextStyle(
                     //         color: Colors.white,
                     //         fontSize: 16,
                     //         fontWeight: FontWeight.w600)),
-                  ),
-                  SizedBox(
-                    height: 8,
                   ),
                   Text(
                     data.subtitle,
@@ -70,9 +76,6 @@ class GridDashboard extends StatelessWidget {
                     //         color: Colors.white38,
                     //         fontSize: 10,
                     //         fontWeight: FontWeight.w600)),
-                  ),
-                  SizedBox(
-                    height: 14,
                   ),
                   Text(
                     data.event,
@@ -90,6 +93,7 @@ class GridDashboard extends StatelessWidget {
   }
 }
 
+
 class Items {
   String title;
   String subtitle;
@@ -106,11 +110,21 @@ class Home extends StatefulWidget {
 class HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-            appBar: AppBar(
-        title: Text('Home'),
+    return Container(
+      decoration: BoxDecoration(
+          gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Color.fromRGBO(143, 22, 255, 1),
+                Color.fromRGBO(16,126,255,1),
+
+              ]
+          )
       ),
-      backgroundColor: Color.fromARGB(255, 228, 225, 231),
+    child: Scaffold(
+      backgroundColor: Colors.transparent,
+
       body: Column(
         children: <Widget>[
           SizedBox(
@@ -119,24 +133,21 @@ class HomeState extends State<Home> {
           Padding(
             padding: EdgeInsets.only(left: 16, right: 16),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    Text(
-                      "Welcome James",
-                      // style: GoogleFonts.openSans(
-                      //     textStyle: TextStyle(
-                      //         color: Colors.white,
-                      //         fontSize: 18,
-                      //         fontWeight: FontWeight.bold)),
-                    ),
                     SizedBox(
                       height: 4,
                     ),
                     Text(
-                      "Home",
+                      "Major Matcher",
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                      textAlign: TextAlign.center,
+                      textScaleFactor: 3,
                       // style: GoogleFonts.openSans(
                       //     textStyle: TextStyle(
                       //         color: Color(0xffa29aac),
@@ -155,6 +166,7 @@ class HomeState extends State<Home> {
          GridDashboard()
         ],
       ),
+    ),
     );
   }
 }
