@@ -28,6 +28,15 @@ class _QuizAppState extends State<QuizApp> {
   
   ];
 
+  bool _hasBeenPressed1 = false;
+  bool _hasBeenPressed2 = false;
+  bool _hasBeenPressed3 = false;
+  bool _hasBeenPressed4 = false;
+  bool _hasBeenPressed5 = false;
+
+
+
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -95,8 +104,16 @@ class _QuizAppState extends State<QuizApp> {
                         borderRadius: BorderRadius.circular(25.0),
                         side: BorderSide(color: Color.fromRGBO(255, 255, 255, 1)),
                       ),
-                      color: Colors.transparent,
-                      onPressed: () => _checkAnswer("Strongly Agree", context),
+                      onPressed: () => setState(() {
+                        _hasBeenPressed1 = !_hasBeenPressed1;
+                        if(_hasBeenPressed1  == true){
+                          _hasBeenPressed5 = false;
+                          _hasBeenPressed2 = false;
+                          _hasBeenPressed3 = false;
+                          _hasBeenPressed4 = false;
+                        }
+                      }),
+                      color: _hasBeenPressed1 ? Color.fromRGBO(255, 255, 255, 0.4) : Colors.transparent,
                       child: Text(
                         questionBank[_currentQuestionIndex].getAnswer(0),
                         style: TextStyle(color: Colors.white),
@@ -118,9 +135,16 @@ class _QuizAppState extends State<QuizApp> {
                         side: BorderSide(color: Color.fromRGBO(255, 255, 255, 1)),
                       ),
 
-                      onPressed: () => _checkAnswer("Agree", context),
-                      color: Colors.transparent,
-                      child: Text(
+                      onPressed: () => setState(() {
+                        _hasBeenPressed2 = !_hasBeenPressed2;
+                        if(_hasBeenPressed2 == true){
+                          _hasBeenPressed1 = false;
+                          _hasBeenPressed5 = false;
+                          _hasBeenPressed3 = false;
+                          _hasBeenPressed4 = false;
+                        }
+                      }),
+                      color: _hasBeenPressed2 ? Color.fromRGBO(255, 255, 255, 0.4) : Colors.transparent,                      child: Text(
                         questionBank[_currentQuestionIndex].getAnswer(1),
                         style: TextStyle(color: Colors.white),
                       ),
@@ -137,9 +161,16 @@ class _QuizAppState extends State<QuizApp> {
                           borderRadius: BorderRadius.circular(25.0),
                           side: BorderSide(color: Color.fromRGBO(255, 255, 255, 1)),
                         ),
-                        onPressed: () => _checkAnswer("Neutral", context),
-                        color: Colors.transparent,
-                        child: Text(
+                        onPressed: () => setState(() {
+                          _hasBeenPressed3 = !_hasBeenPressed3;
+                          if(_hasBeenPressed3 == true){
+                            _hasBeenPressed1 = false;
+                            _hasBeenPressed2 = false;
+                            _hasBeenPressed5 = false;
+                            _hasBeenPressed4 = false;
+                          }
+                        }),
+                        color: _hasBeenPressed3 ? Color.fromRGBO(255, 255, 255, 0.4) : Colors.transparent,                        child: Text(
                           questionBank[_currentQuestionIndex].getAnswer(2),
                           style: TextStyle(color: Colors.white),
                         ),
@@ -156,9 +187,16 @@ class _QuizAppState extends State<QuizApp> {
                         borderRadius: BorderRadius.circular(25.0),
                         side: BorderSide(color: Color.fromRGBO(255, 255, 255, 1)),
                       ),
-                      onPressed: () => _checkAnswer("Disagree", context),
-                      color: Colors.transparent,
-                      child: Text(
+                      onPressed: () => setState(() {
+                        _hasBeenPressed4 = !_hasBeenPressed4;
+                        if(_hasBeenPressed4 == true){
+                          _hasBeenPressed1 = false;
+                          _hasBeenPressed2 = false;
+                          _hasBeenPressed3 = false;
+                          _hasBeenPressed5 = false;
+                        }
+                      }),
+                      color: _hasBeenPressed4 ? Color.fromRGBO(255, 255, 255, 0.4) : Colors.transparent,                      child: Text(
                         questionBank[_currentQuestionIndex].getAnswer(3),
                         style: TextStyle(color: Colors.white),
                       ),
@@ -175,9 +213,16 @@ class _QuizAppState extends State<QuizApp> {
                         borderRadius: BorderRadius.circular(25.0),
                         side: BorderSide(color: Color.fromRGBO(255, 255, 255, 1)),
                       ),
-                      onPressed: () => _checkAnswer("Strongly Disagree", context),
-                      color: Colors.transparent,
-                      child: Text(
+                      onPressed: () => setState(() {
+                        _hasBeenPressed5 = !_hasBeenPressed5;
+                        if(_hasBeenPressed5 == true){
+                          _hasBeenPressed1 = false;
+                          _hasBeenPressed2 = false;
+                          _hasBeenPressed3 = false;
+                          _hasBeenPressed4 = false;
+                        }
+                      }),
+                    color: _hasBeenPressed5 ? Color.fromRGBO(255, 255, 255, 0.4) : Colors.transparent,                      child: Text(
                         questionBank[_currentQuestionIndex].getAnswer(4),
                         style: TextStyle(color: Colors.white),
                       ),
@@ -270,5 +315,10 @@ class _QuizAppState extends State<QuizApp> {
 
   _nextQuestion() {
     _updateQuestion();
+    _hasBeenPressed1 = false;
+    _hasBeenPressed2 = false;
+    _hasBeenPressed3 = false;
+    _hasBeenPressed4 = false;
+    _hasBeenPressed5 = false;
   }
 }
