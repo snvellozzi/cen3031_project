@@ -26,6 +26,7 @@ class _QuizAppState extends State<QuizApp> {
 
     Question.name("Do you like tech?", ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"]),
 
+
     Question.name("Do you like people?", ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"]),
 
     
@@ -234,7 +235,9 @@ class _QuizAppState extends State<QuizApp> {
                     ),
                   ),
                   SizedBox(
+
                     height: 10,
+
                   ),
 
 
@@ -263,6 +266,7 @@ class _QuizAppState extends State<QuizApp> {
                         Container(
                             width: 100.0,
                              height: 50.0,
+
                             child: RaisedButton(
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(25.0),
