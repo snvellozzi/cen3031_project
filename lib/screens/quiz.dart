@@ -2,6 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:scrummy_bears/model/Question.dart';
+import 'package:scrummy_bears/screens/home.dart';
+import 'package:scrummy_bears/screens/results.dart';
+import 'package:get/get.dart';
 
 
 class QuizApp extends StatefulWidget {
@@ -14,106 +17,277 @@ class _QuizAppState extends State<QuizApp> {
 
   List questionBank = [
     Question.name(
-        "Do you prefer working a group setting or independently?",  ["I prefer to work in as group setting", "I prefer to work independently"]),
-    Question.name("Do you like animals?", ["Yes I love animal", "I prefer not to work with animals"]),
+        "Do you prefer working a group setting or independently?",  ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"]),
+    Question.name("Do you like animals?", ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"]),
     
-    Question.name("Is career salary important?", ["Yes, I find career salary very important.", "No, I career salary is not important"]),
+    Question.name("Is career salary important?", ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"]),
 
-    Question.name("Do you like politics?", ["Yes, I find politics interesting.", "I, do not find politics interesting."]),
+    Question.name("I like Politics?", ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"]),
 
-    Question.name("Do you like technology?", ["Yes, I love technology, I would to work with politcis.", "I do not like politics."]),
+    Question.name("Do you like tech?", ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"]),
 
+    Question.name("Do you like people?", ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"]),
 
+    
 
   
   ];
 
+  bool _hasBeenPressed1 = false;
+  bool _hasBeenPressed2 = false;
+  bool _hasBeenPressed3 = false;
+  bool _hasBeenPressed4 = false;
+  bool _hasBeenPressed5 = false;
+
+
+
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Major Matcher Quiz"),
-        centerTitle: true,
-       // backgroundColor: Colors.blueGrey,
-      ),
+    return Container(
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Color.fromRGBO(143, 22, 255, 1),
+                  Color.fromRGBO(16,126,255,1),
 
-     // backgroundColor: Colors.blueGrey,
+                ]
+            )
+        ),
+   child: Scaffold(
+     resizeToAvoidBottomInset: false,
+     backgroundColor: Colors.transparent,
 
       // We use [Builder] here to use a [context] that is a descendant of [Scaffold]
       //or else [Scaffold.of] will return null
       body: Builder(
         builder: (BuildContext context) => Container(
+
           child: Column(
+
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Center(
-          
-              ),
+
+
               Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: Container(
+
                   decoration: BoxDecoration(
-                      color: Colors.transparent,
-                      borderRadius: BorderRadius.circular(14.4),
-                      border: Border.all(
-                          color: Colors.blueGrey.shade400,
-                          style: BorderStyle.solid)),
-                  height: 120.0,
+
+                      color: Color.fromRGBO(0, 0, 0, 0.2),
+                      border: Border.all(color: Color.fromARGB(255, 228, 225, 231), width: 2),
+                      borderRadius: BorderRadius.circular(30)),
+                      height: 130,
                   child: Center(
                       child: Padding(
                     padding: const EdgeInsets.all(8.0),
+
                     child: Text(
                       questionBank[_currentQuestionIndex].questionText,
-//                      style: TextStyle(fontSize: 16.9,
-//                          color: Colors.white),
+                      style: TextStyle(color: Colors.white, fontSize: 16),
                     ),
                   )),
                 ),
               ),
-              Row(
+              Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 
                 children: <Widget>[
-                  
-                  RaisedButton(
-                    onPressed: () => _prevQuestion(),
-                    color: Colors.blueGrey.shade900,
-                    child: Icon(
-                      Icons.arrow_back,
-                      color: Colors.white,
+
+                  SizedBox(
+                    height: 10,
+                  ),
+
+                  Container(
+                    width: 460.0,
+                    height: 70.0,
+                    child: RaisedButton(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(25.0),
+                        side: BorderSide(color: Color.fromRGBO(255, 255, 255, 1)),
+                      ),
+                      onPressed: () => setState(() {
+                        _hasBeenPressed1 = !_hasBeenPressed1;
+                        if(_hasBeenPressed1  == true){
+                          _hasBeenPressed5 = false;
+                          _hasBeenPressed2 = false;
+                          _hasBeenPressed3 = false;
+                          _hasBeenPressed4 = false;
+                        }
+                      }),
+                      color: _hasBeenPressed1 ? Color.fromRGBO(255, 255, 255, 0.4) : Colors.transparent,
+                      child: Text(
+                        questionBank[_currentQuestionIndex].getAnswer(0),
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                   ),
-                  RaisedButton(
-                    onPressed: () => _checkAnswer(true, context),
-                    color: Colors.blueGrey.shade900,
-                    child: Text(
-                      questionBank[_currentQuestionIndex].getAnswer(0),
-                      style: TextStyle(color: Colors.white),
+
+                  SizedBox(
+                    height: 10,
+                  ),
+
+                  Container(
+                      width: 460.0,
+                      height: 70.0,
+
+                    child: RaisedButton(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(25.0),
+                        side: BorderSide(color: Color.fromRGBO(255, 255, 255, 1)),
+                      ),
+
+                      onPressed: () => setState(() {
+                        _hasBeenPressed2 = !_hasBeenPressed2;
+                        if(_hasBeenPressed2 == true){
+                          _hasBeenPressed1 = false;
+                          _hasBeenPressed5 = false;
+                          _hasBeenPressed3 = false;
+                          _hasBeenPressed4 = false;
+                        }
+                      }),
+                      color: _hasBeenPressed2 ? Color.fromRGBO(255, 255, 255, 0.4) : Colors.transparent,                      child: Text(
+                        questionBank[_currentQuestionIndex].getAnswer(1),
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                   ),
-                  RaisedButton(
-                    onPressed: () => _checkAnswer(false, context),
-                    color: Colors.blueGrey.shade900,
-                    child: Text(
-                      questionBank[_currentQuestionIndex].getAnswer(1),
-                      style: TextStyle(color: Colors.white),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                      width: 460.0,
+                      height: 70.0,
+                      child: RaisedButton(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(25.0),
+                          side: BorderSide(color: Color.fromRGBO(255, 255, 255, 1)),
+                        ),
+                        onPressed: () => setState(() {
+                          _hasBeenPressed3 = !_hasBeenPressed3;
+                          if(_hasBeenPressed3 == true){
+                            _hasBeenPressed1 = false;
+                            _hasBeenPressed2 = false;
+                            _hasBeenPressed5 = false;
+                            _hasBeenPressed4 = false;
+                          }
+                        }),
+                        color: _hasBeenPressed3 ? Color.fromRGBO(255, 255, 255, 0.4) : Colors.transparent,                        child: Text(
+                          questionBank[_currentQuestionIndex].getAnswer(2),
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                      width: 460.0,
+                      height: 70.0,
+                    child: RaisedButton(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(25.0),
+                        side: BorderSide(color: Color.fromRGBO(255, 255, 255, 1)),
+                      ),
+                      onPressed: () => setState(() {
+                        _hasBeenPressed4 = !_hasBeenPressed4;
+                        if(_hasBeenPressed4 == true){
+                          _hasBeenPressed1 = false;
+                          _hasBeenPressed2 = false;
+                          _hasBeenPressed3 = false;
+                          _hasBeenPressed5 = false;
+                        }
+                      }),
+                      color: _hasBeenPressed4 ? Color.fromRGBO(255, 255, 255, 0.4) : Colors.transparent,                      child: Text(
+                        questionBank[_currentQuestionIndex].getAnswer(3),
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                   ),
-                  RaisedButton(
-                    onPressed: () => _nextQuestion(),
-                    color: Colors.blueGrey.shade900,
-                    child: Icon(
-                      Icons.arrow_forward,
-                      color: Colors.white,
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                      width: 460.0,
+                      height: 70.0,
+                  child: RaisedButton(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(25.0),
+                        side: BorderSide(color: Color.fromRGBO(255, 255, 255, 1)),
+                      ),
+                      onPressed: () => setState(() {
+                        _hasBeenPressed5 = !_hasBeenPressed5;
+                        if(_hasBeenPressed5 == true){
+                          _hasBeenPressed1 = false;
+                          _hasBeenPressed2 = false;
+                          _hasBeenPressed3 = false;
+                          _hasBeenPressed4 = false;
+                        }
+                      }),
+                    color: _hasBeenPressed5 ? Color.fromRGBO(255, 255, 255, 0.4) : Colors.transparent,                      child: Text(
+                        questionBank[_currentQuestionIndex].getAnswer(4),
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
-                  )
-                ],
-              ),
-              Spacer(),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+
+
+                  Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Container(
+                            width: 100.0,
+                            height: 50.0,
+                            child: RaisedButton(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(25.0),
+                                side: BorderSide(color: Color.fromRGBO(255, 255, 255, 1)),
+                              ),
+                              onPressed: () => _prevQuestion(),
+                              color: Colors.transparent,
+                              child: Icon(
+                                Icons.arrow_back,
+                                color: Colors.white,
+                              ),
+                            ),
+                        ),
+                        SizedBox(
+                          width: 210,
+                        ),
+                        Container(
+                            width: 100.0,
+                             height: 50.0,
+                            child: RaisedButton(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(25.0),
+                                side: BorderSide(color: Color.fromRGBO(255, 255, 255, 1)),
+                              ),
+                              color: Colors.transparent,
+                              onPressed: () => _nextQuestion(),
+                              child: Icon(
+                                Icons.arrow_forward,
+                                color: Colors.white,
+                              ),
+                            )
+                        ),
+                       ]),
+
+              ]),
+
             ],
+
           ),
+
         ),
+
       ),
+   ),
     );
   }
 
@@ -124,24 +298,17 @@ class _QuizAppState extends State<QuizApp> {
     });
   }
 
-  _checkAnswer(bool userChoice, BuildContext context) {
-    if (true) {
-      //correct answer
-      // final snackbar = SnackBar(
-      //     backgroundColor: Colors.green,
-      //     duration: Duration(milliseconds: 500),
-      //     content: Text("Correct!"));
-      // Scaffold.of(context).showSnackBar(snackbar);
-      _updateQuestion();
-    } else {
-      // debugPrint("Incorrect!");
-      // final snackbar = SnackBar(
-      //     backgroundColor: Colors.redAccent,
-      //     duration: Duration(milliseconds: 500),
-      //     content: Text("Incorrect!"));
-      // Scaffold.of(context).showSnackBar(snackbar);
+  _checkAnswer(String answer, BuildContext context) {
+    if (answer == "Strongly Agree") {
 
-      _updateQuestion();
+    } else if(answer == "Agree"){
+
+    }else if(answer == "Neutral"){
+
+    }else if(answer == "Disagree"){
+
+    }else if(answer == "Strongly Disagree"){
+
     }
   }
 
@@ -152,6 +319,18 @@ class _QuizAppState extends State<QuizApp> {
   }
 
   _nextQuestion() {
+    
+    print(_currentQuestionIndex);
+
+    if (_currentQuestionIndex == questionBank.length - 1) {
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => Results()));
+    }
+
     _updateQuestion();
+    _hasBeenPressed1 = false;
+    _hasBeenPressed2 = false;
+    _hasBeenPressed3 = false;
+    _hasBeenPressed4 = false;
+    _hasBeenPressed5 = false;
   }
 }
