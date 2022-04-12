@@ -2,6 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:scrummy_bears/model/Question.dart';
+import 'package:scrummy_bears/screens/home.dart';
+import 'package:scrummy_bears/screens/results.dart';
+import 'package:get/get.dart';
 
 
 class QuizApp extends StatefulWidget {
@@ -21,9 +24,12 @@ class _QuizAppState extends State<QuizApp> {
 
     Question.name("I like Politics?", ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"]),
 
-    Question.name("Do you like technology?", ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"]),
+    Question.name("Do you like tech?", ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"]),
 
 
+    Question.name("Do you like people?", ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"]),
+
+    
 
   
   ];
@@ -229,7 +235,9 @@ class _QuizAppState extends State<QuizApp> {
                     ),
                   ),
                   SizedBox(
-                    height: 200,
+
+                    height: 10,
+
                   ),
 
 
@@ -253,11 +261,12 @@ class _QuizAppState extends State<QuizApp> {
                             ),
                         ),
                         SizedBox(
-                          width: 280,
+                          width: 210,
                         ),
                         Container(
                             width: 100.0,
-                            height: 50.0,
+                             height: 50.0,
+
                             child: RaisedButton(
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(25.0),
@@ -314,6 +323,13 @@ class _QuizAppState extends State<QuizApp> {
   }
 
   _nextQuestion() {
+    
+    print(_currentQuestionIndex);
+
+    if (_currentQuestionIndex == questionBank.length - 1) {
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => Results()));
+    }
+
     _updateQuestion();
     _hasBeenPressed1 = false;
     _hasBeenPressed2 = false;
