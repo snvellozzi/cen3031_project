@@ -28,7 +28,7 @@ class Navigation extends StatefulWidget {
 class _NavigationState extends State<Navigation> {
   int _selectedIndex = 0;
 
-  List<Widget> _widgetOptions = [Home(), QuizApp(), Results()];
+  List<Widget> _widgetOptions = [Home(), Results()];
 
   void _onItemTap(int index) {
     setState(() {
@@ -43,28 +43,7 @@ class _NavigationState extends State<Navigation> {
         index: _selectedIndex,
         children: _widgetOptions,
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home,
-              ),
-              label: 'Home'),
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.message,
-              ),
-              label: 'Quiz'),
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.person,
-              ),
-              label: 'Results'),
-        ],
 
-        currentIndex: _selectedIndex,
-        onTap: _onItemTap,
-      ),
     );
   }
 }
