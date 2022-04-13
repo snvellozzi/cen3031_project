@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:scrummy_bears/model/Question.dart';
+import 'package:scrummy_bears/screens/ScoreScreen.dart';
 import 'package:scrummy_bears/screens/home.dart';
 import 'package:scrummy_bears/screens/results.dart';
 import 'package:get/get.dart';
@@ -25,7 +26,6 @@ class _QuizAppState extends State<QuizApp> {
     Question.name("I like Politics?", ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"]),
 
     Question.name("Do you like tech?", ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"]),
-
 
     Question.name("Do you like people?", ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"]),
 
@@ -235,9 +235,7 @@ class _QuizAppState extends State<QuizApp> {
                     ),
                   ),
                   SizedBox(
-
                     height: 10,
-
                   ),
 
 
@@ -266,7 +264,6 @@ class _QuizAppState extends State<QuizApp> {
                         Container(
                             width: 100.0,
                              height: 50.0,
-
                             child: RaisedButton(
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(25.0),
@@ -327,7 +324,7 @@ class _QuizAppState extends State<QuizApp> {
     print(_currentQuestionIndex);
 
     if (_currentQuestionIndex == questionBank.length - 1) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) => Results()));
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => ScoreScreen()));
     }
 
     _updateQuestion();
