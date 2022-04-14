@@ -219,12 +219,14 @@ class ListViewThumbnail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
+
       alignment: Alignment.bottomCenter,
       children: <Widget>[
         Stack(
           alignment: Alignment.center,
           children: <Widget>[
             Container(
+
               width: MediaQuery.of(context).size.width,
               height: 170,
               decoration: BoxDecoration(
@@ -258,10 +260,23 @@ class ListDetailsHeader extends StatelessWidget {
   // const MovieDetailsHeader({Key key, this.movie}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Column(
+
+    return Container(
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Color.fromRGBO(143, 22, 255, 1),
+                  Color.fromRGBO(16,126,255,1),
+
+                ]
+            )
+        ),
+      child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text("Learn about Computer Science".toUpperCase(),
+        Text("Mechanical Engineering".toUpperCase(),
           style: TextStyle(
               fontWeight: FontWeight.w400,
               color: Colors.cyan
@@ -280,6 +295,7 @@ class ListDetailsHeader extends StatelessWidget {
           
         ]))
       ],
+      )
     );
   }
 }

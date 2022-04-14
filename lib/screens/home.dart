@@ -173,6 +173,7 @@
 
 
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:scrummy_bears/screens/quiz.dart';
 import 'package:scrummy_bears/screens/results.dart';
@@ -204,20 +205,16 @@ Widget build(BuildContext context) {
 
           child: Column(
 
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-
+              SizedBox(
+                height: 200,
+              ),
 
               Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: Container(
 
-                  decoration: BoxDecoration(
-
-                      color: Color.fromRGBO(0, 0, 0, 0.2),
-                      border: Border.all(color: Color.fromARGB(255, 228, 225, 231), width: 2),
-                      borderRadius: BorderRadius.circular(30)),
-                  height: 130,
                   child: Center(
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
@@ -234,7 +231,7 @@ Widget build(BuildContext context) {
                       //         color: Color(0xffa29aac),
                       //         fontSize: 14,
                       //         fontWeight: FontWeight.w600)),
-                    ), 
+                    ),
                       )),
                 ),
               ),
@@ -242,19 +239,13 @@ Widget build(BuildContext context) {
                   crossAxisAlignment: CrossAxisAlignment.center,
 
                   children: <Widget>[
-
                     SizedBox(
-                      height: 10,
-                    ),
-
-
-                    SizedBox(
-                      height: 10,
+                      height: 50,
                     ),
 
                     Container(
                       width: 400.0,
-                      height: 70.0,
+                      height: 100.0,
 
                       child: RaisedButton(
                         onPressed: () =>  Navigator.of(context).push(MaterialPageRoute(builder: (context) => QuizApp())),
@@ -269,11 +260,11 @@ Widget build(BuildContext context) {
                       ),
                     ),
                     SizedBox(
-                      height: 10,
+                      height: 30,
                     ),
                     Container(
                       width: 400.0,
-                      height: 70.0,
+                      height: 100.0,
                       child: RaisedButton(
                         onPressed: () =>  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Results())),
                         shape: RoundedRectangleBorder(
