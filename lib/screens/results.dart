@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:scrummy_bears/screens/MajorResults.dart';
+
 
 
 List majors = ["Mechanical Engineering", "Computer Science", "History", "Physics", "Nursing"];
@@ -66,8 +68,8 @@ Widget build(BuildContext context) {
                       width: 460.0,
                       height: 70.0,
                       child: RaisedButton(
-                        onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => ResultsDetailsView()))
-,
+                          onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => MajorResults())),
+
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(25.0),
                           side: BorderSide(color: Color.fromRGBO(255, 255, 255, 1)),
@@ -90,7 +92,7 @@ Widget build(BuildContext context) {
                       height: 70.0,
 
                       child: RaisedButton(
-                        onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => ResultsDetailsView())),
+                        onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => MajorResults())),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(25.0),
                           side: BorderSide(color: Color.fromRGBO(255, 255, 255, 1)),
@@ -108,9 +110,10 @@ Widget build(BuildContext context) {
                       width: 460.0,
                       height: 70.0,
                       child: RaisedButton(
-                        onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => ResultsDetailsView()))
-,                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(25.0),
+
+                        onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => MajorResults())),
+                        shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(25.0),
                           side: BorderSide(color: Color.fromRGBO(255, 255, 255, 1)),
                         ),
                         color: Colors.transparent,
@@ -127,7 +130,7 @@ Widget build(BuildContext context) {
                       width: 460.0,
                       height: 70.0,
                       child: RaisedButton(
-                        onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => ResultsDetailsView())),
+                        onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => MajorResults())),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(25.0),
                           side: BorderSide(color: Color.fromRGBO(255, 255, 255, 1)),
@@ -146,7 +149,7 @@ Widget build(BuildContext context) {
                       width: 460.0,
                       height: 70.0,
                       child: RaisedButton(
-                        onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => ResultsDetailsView())),
+                        onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => MajorResults())),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(25.0),
                           side: BorderSide(color: Color.fromRGBO(255, 255, 255, 1)),
@@ -199,7 +202,9 @@ class ResultsDetailsView extends StatelessWidget {
           ListDetailsHeader(),
           HorizontalLine(),
           ListDetailsHeader(),
+          InfoField(),
           HorizontalLine(),
+          InfoField(),
         ],
       
       )
@@ -216,35 +221,33 @@ class ListViewThumbnail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-          gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                Color.fromRGBO(143, 22, 255, 1),
-                Color.fromRGBO(16,126,255,1),
+    return Stack(
 
-              ]
-          )
-      ),
-      child: Stack(
       alignment: Alignment.bottomCenter,
       children: <Widget>[
         Stack(
           alignment: Alignment.center,
           children: <Widget>[
             Container(
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Color.fromRGBO(143, 22, 255, 1),
+                        Color.fromRGBO(16,126,255,1),
+
+                      ]
+                  )
+              ),
 
               width: MediaQuery.of(context).size.width,
               height: 170,
-              child: Center(
-                child: Text(
-                  "Mechanical Engineering",
-                  style: TextStyle(
-                    fontSize:25,
-                    color: Colors.white,
-                  ),
+              child: Text(
+                "Mechanical Engineering",
+                style: TextStyle(
+                  fontSize: 100,
+                  color: Colors.white,
                 ),
               ),
             ),
@@ -253,7 +256,6 @@ class ListViewThumbnail extends StatelessWidget {
         ),
 
       ],
-      ),
     );
   }
 }
@@ -262,30 +264,59 @@ class ListViewThumbnail extends StatelessWidget {
 class ListDetailsHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
     return Container(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Text("Description", style: TextStyle(
-                fontWeight: FontWeight.w500,
-                fontSize: 32
-            ),),
-            Text.rich(TextSpan(style: TextStyle(
-              fontSize: 13, fontWeight: FontWeight.w300,
-            ), children: <TextSpan>[
-              TextSpan(
-                  text: "Mechanical Engineering is concerned with motion and the processes whereby other energy forms are converted into motion. Mechanical engineers are responsible for conceiving, designing, manufacturing, testing, and marketing devices and systems that alter, transfer, transform, and utilize the energy forms that cause motion."
-              ),
+      child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Text("Mechanical Engineering".toUpperCase(),
+          style: TextStyle(
+              fontWeight: FontWeight.w400,
+              color: Colors.cyan
+          ),),
+        Text("Mechanical Engineering", style: TextStyle(
+            fontWeight: FontWeight.w500,
+            fontSize: 32
+        ),),
+        Text.rich(TextSpan(style: TextStyle(
+          fontSize: 13, fontWeight: FontWeight.w300,
+        ), children: <TextSpan> [
+          TextSpan(
+            text: "Mechanical Engineering is concerned with motion and the processes whereby other energy forms are converted into motion. Mechanical engineers are responsible for conceiving, designing, manufacturing, testing, and marketing devices and systems that alter, transfer, transform, and utilize the energy forms that cause motion."
+          ),
 
 
-            ]))
-          ],
-        )
+        ]))
+      ],
+      )
     );
   }
 }
 
 
+class InfoField extends StatelessWidget {
+  // final String field;
+  // final String value;
+
+  // const MovieField({Key key, this.field, this.value}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Text("This major takes about 4 years", style: TextStyle(
+            color: Colors.black38,
+            fontSize: 12, fontWeight: FontWeight.w300
+        ),),
+        Expanded(
+          child: Text("This major involves math", style: TextStyle(
+              color: Colors.black, fontSize: 12, fontWeight: FontWeight.w300
+          ),),
+        )
+      ],
+    );
+  }
+}
 
 class HorizontalLine extends StatelessWidget {
   @override
