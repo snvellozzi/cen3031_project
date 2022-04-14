@@ -199,9 +199,7 @@ class ResultsDetailsView extends StatelessWidget {
           ListDetailsHeader(),
           HorizontalLine(),
           ListDetailsHeader(),
-          InfoField(),
           HorizontalLine(),
-          InfoField(),
         ],
       
       )
@@ -218,8 +216,19 @@ class ListViewThumbnail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
+    return Container(
+      decoration: BoxDecoration(
+          gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Color.fromRGBO(143, 22, 255, 1),
+                Color.fromRGBO(16,126,255,1),
 
+              ]
+          )
+      ),
+      child: Stack(
       alignment: Alignment.bottomCenter,
       children: <Widget>[
         Stack(
@@ -229,101 +238,54 @@ class ListViewThumbnail extends StatelessWidget {
 
               width: MediaQuery.of(context).size.width,
               height: 170,
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: NetworkImage("https://media.istockphoto.com/photos/the-university-of-florida-picture-id1181057283?k=20&m=1181057283&s=612x612&w=0&h=Q7CsWYDpQyD_0t2AkQadVf9c82cXM1BkSg9KpTPn22A="),
-                      fit: BoxFit.cover)
+              child: Center(
+                child: Text(
+                  "Mechanical Engineering",
+                  style: TextStyle(
+                    fontSize:25,
+                    color: Colors.white,
+                  ),
+                ),
               ),
             ),
             
           ],
         ),
-        Container(
-          decoration: BoxDecoration(
-              gradient: LinearGradient(colors: [Color(0x00f5f5f5), Color(0xfff5f5f5)],
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter)
-          ),
-          height: 80,
-        )
-
 
       ],
+      ),
     );
   }
 }
 
 
 class ListDetailsHeader extends StatelessWidget {
-  // final Movie movie;
-
-  // const MovieDetailsHeader({Key key, this.movie}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-
     return Container(
-        decoration: BoxDecoration(
-            gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  Color.fromRGBO(143, 22, 255, 1),
-                  Color.fromRGBO(16,126,255,1),
-
-                ]
-            )
-        ),
-      child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Text("Mechanical Engineering".toUpperCase(),
-          style: TextStyle(
-              fontWeight: FontWeight.w400,
-              color: Colors.cyan
-          ),),
-        Text("Details about Computer Science", style: TextStyle(
-            fontWeight: FontWeight.w500,
-            fontSize: 32
-        ),),
-        Text.rich(TextSpan(style: TextStyle(
-          fontSize: 13, fontWeight: FontWeight.w300,
-        ), children: <TextSpan> [
-          TextSpan(
-              text: "Computer Science is the study of computers and computational systems. Unlike electrical and computer engineers, computer scientists deal mostly with software and software systems; this includes their theory, design, development, and application. Principal areas of study within Computer Science include artificial intelligence, computer systems and networks, security, database systems, human computer interaction, vision and graphics, numerical analysis, programming languages, software engineering, bioinformatics and theory of computing. Although knowing how to program is essential to the study of computer science, it is only one element of the field. Computer scientists design and analyze algorithms to solve programs and study the performance of computer hardware and software. The problems that computer scientists encounter range from the abstract-- determining what problems can be solved with computers and the complexity of the algorithms that solve them – to the tangible – designing applications that perform well on handheld devices, that are easy to use, and that uphold security measures."
-          ),
-   
-          
-        ]))
-      ],
-      )
-    );
-  }
-}
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text("Description", style: TextStyle(
+                fontWeight: FontWeight.w500,
+                fontSize: 32
+            ),),
+            Text.rich(TextSpan(style: TextStyle(
+              fontSize: 13, fontWeight: FontWeight.w300,
+            ), children: <TextSpan>[
+              TextSpan(
+                  text: "Mechanical Engineering is concerned with motion and the processes whereby other energy forms are converted into motion. Mechanical engineers are responsible for conceiving, designing, manufacturing, testing, and marketing devices and systems that alter, transfer, transform, and utilize the energy forms that cause motion."
+              ),
 
 
-class InfoField extends StatelessWidget {
-  // final String field;
-  // final String value;
-
-  // const MovieField({Key key, this.field, this.value}) : super(key: key);
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Text("This major takes about 4 years", style: TextStyle(
-            color: Colors.black38,
-            fontSize: 12, fontWeight: FontWeight.w300
-        ),),
-        Expanded(
-          child: Text("This major involves math", style: TextStyle(
-              color: Colors.black, fontSize: 12, fontWeight: FontWeight.w300
-          ),),
+            ]))
+          ],
         )
-      ],
     );
   }
 }
+
+
 
 class HorizontalLine extends StatelessWidget {
   @override
