@@ -97,7 +97,7 @@ class Careers {
     Careers("Environmental Science", "Environmental Engineer", "Environmental engineers are problem-solvers who find innovative solutions to environmental issues.",
         "\$92,120", "Bachelor's", "Collecting and analyzing environmental data, studying human influences on the environment, and improving environmental conservation management."),
 
-    Careers("Environmental Science", "Wildlife biologist", "Wildlife biologists study animals in their natural habitats to understand their environments.",
+    Careers("Environmental Science", "Wildlife Biologist", "Wildlife biologists study animals in their natural habitats to understand their environments.",
         "\$50,186", "Bachelor's", "Making recommendations about animal habitat and care and planning for wildlife environments; estimating plant and animal populations; classifying animals based on genetic data taken from animals."),
 
     Careers("Environmental Science", "Occupational Health & Safety Specialist", "Occupational health and safety specialists examine the workplace for environmental or physical factors that could affect employee health, safety, comfort, and performance.",
