@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+<<<<<<< Updated upstream
 
 
 List majors = ["Mechanical Engineering", "Computer Science", "History", "Physics", "Nursing"];
@@ -76,9 +77,95 @@ Widget build(BuildContext context) {
                         color: Colors.transparent,
                         child: Text(
                             "1. ${majors[0]}",
+=======
+import 'package:scrummy_bears/screens/MajorResults.dart';
+import 'package:scrummy_bears/screens/majors.dart';
+
+List majors = [
+
+];
+
+List<Majors> majorsList =  MajorsList.getMajors();
+
+
+class _ResultState extends State<Results> {
+
+  @override
+  void initState() {
+    majorsList =_getMajors();
+    super.initState();
+  }
+  
+  Widget build(BuildContext context) {
+    print(majors[0]);
+    return Container(
+  
+      decoration: BoxDecoration(
+          gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+            Color.fromRGBO(143, 22, 255, 1),
+            Color.fromRGBO(16, 126, 255, 1),
+          ])),
+      child: Scaffold(
+        resizeToAvoidBottomInset: false,
+        backgroundColor: Colors.transparent,
+  
+
+        // We use [Builder] here to use a [context] that is a descendant of [Scaffold]
+        //or else [Scaffold.of] will return null
+        body: Builder(
+          builder: (BuildContext context) => Container(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Color.fromRGBO(0, 0, 0, 0.2),
+                        border: Border.all(
+                            color: Color.fromARGB(255, 228, 225, 231),
+                            width: 2),
+                        borderRadius: BorderRadius.circular(30)),
+                    height: 130,
+                    child: Center(
+                        child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        "Your Top 5 College Majors",
+                        style: TextStyle(color: Colors.white, fontSize: 16),
+                      ),
+                    )),
+                  ),
+                ),
+                Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Container(
+                        width: 460.0,
+                        height: 70.0,
+                        child: RaisedButton(
+                          onPressed: () => Navigator.of(context).push(
+                              MaterialPageRoute(
+                                  builder: (context) => MajorResults(majorsList.elementAt(0)))),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(25.0),
+                            side: BorderSide(
+                                color: Color.fromRGBO(255, 255, 255, 1)),
+                          ),
+                          color: Colors.transparent,
+                          child: Text(
+                            "1. ${majorsList.elementAt(0).major}",
+>>>>>>> Stashed changes
                             style: TextStyle(color: Colors.white),
                         ),
                       ),
+<<<<<<< Updated upstream
                     ),
 
                     SizedBox(
@@ -94,12 +181,35 @@ Widget build(BuildContext context) {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(25.0),
                           side: BorderSide(color: Color.fromRGBO(255, 255, 255, 1)),
+=======
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Container(
+                        width: 460.0,
+                        height: 70.0,
+                        child: RaisedButton(
+                          onPressed: () => Navigator.of(context).push(
+                              MaterialPageRoute(
+                                  builder: (context) => MajorResults(majorsList.elementAt(1)))),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(25.0),
+                            side: BorderSide(
+                                color: Color.fromRGBO(255, 255, 255, 1)),
+                          ),
+                          color: Colors.transparent,
+                          child: Text(
+                            "2. ${majorsList.elementAt(1).major}",
+                            style: TextStyle(color: Colors.white),
+                          ),
+>>>>>>> Stashed changes
                         ),
                         color:Colors.transparent,                      child: Text(
                         "2. ${majors[1]}",
                         style: TextStyle(color: Colors.white),
                       ),
                       ),
+<<<<<<< Updated upstream
                     ),
                     SizedBox(
                       height: 10,
@@ -112,6 +222,25 @@ Widget build(BuildContext context) {
 ,                        shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(25.0),
                           side: BorderSide(color: Color.fromRGBO(255, 255, 255, 1)),
+=======
+                      Container(
+                        width: 460.0,
+                        height: 70.0,
+                        child: RaisedButton(
+                          onPressed: () => Navigator.of(context).push(
+                              MaterialPageRoute(
+                                  builder: (context) => MajorResults(majorsList.elementAt(2)))),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(25.0),
+                            side: BorderSide(
+                                color: Color.fromRGBO(255, 255, 255, 1)),
+                          ),
+                          color: Colors.transparent,
+                          child: Text(
+                            "3: ${majorsList.elementAt(2).major}",
+                            style: TextStyle(color: Colors.white),
+                          ),
+>>>>>>> Stashed changes
                         ),
                         color: Colors.transparent,
                         child: Text(
@@ -119,6 +248,7 @@ Widget build(BuildContext context) {
                           style: TextStyle(color: Colors.white),
                       ),
                       ),
+<<<<<<< Updated upstream
                     ),
                     SizedBox(
                       height: 10,
@@ -131,6 +261,25 @@ Widget build(BuildContext context) {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(25.0),
                           side: BorderSide(color: Color.fromRGBO(255, 255, 255, 1)),
+=======
+                      Container(
+                        width: 460.0,
+                        height: 70.0,
+                        child: RaisedButton(
+                          onPressed: () => Navigator.of(context).push(
+                              MaterialPageRoute(
+                                  builder: (context) => MajorResults(majorsList.elementAt(3)))),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(25.0),
+                            side: BorderSide(
+                                color: Color.fromRGBO(255, 255, 255, 1)),
+                          ),
+                          color: Colors.transparent,
+                          child: Text(
+                            "4. ${majorsList.elementAt(3).major}",
+                            style: TextStyle(color: Colors.white),
+                          ),
+>>>>>>> Stashed changes
                         ),
                         color:  Colors.transparent,
                         child: Text(
@@ -138,6 +287,7 @@ Widget build(BuildContext context) {
                         style: TextStyle(color: Colors.white),
                       ),
                       ),
+<<<<<<< Updated upstream
                     ),
                     SizedBox(
                       height: 10,
@@ -150,6 +300,28 @@ Widget build(BuildContext context) {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(25.0),
                           side: BorderSide(color: Color.fromRGBO(255, 255, 255, 1)),
+=======
+                      Container(
+                        width: 460.0,
+                        height: 70.0,
+                        child: RaisedButton(
+                          onPressed: () => {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                  builder: (context) => MajorResults(majorsList.elementAt(3)))),
+                         
+  },
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(25.0),
+                            side: BorderSide(
+                                color: Color.fromRGBO(255, 255, 255, 1)),
+                          ),
+                          color: Colors.transparent,
+                          child: Text(
+                            "5. ${majorsList.elementAt(4).major}",
+                            style: TextStyle(color: Colors.white),
+                          ),
+>>>>>>> Stashed changes
                         ),
                         color: Colors.transparent,                      child: Text(
                         "5. ${majors[4]}",
@@ -179,13 +351,22 @@ Widget build(BuildContext context) {
 
 
 class Results extends StatefulWidget {
+  // final List<Majors> majors;
+  // const Results(this.majors);
+
   @override
+<<<<<<< Updated upstream
   ResultState createState() => new ResultState();
 
+=======
+  _ResultState createState() => new _ResultState();
+  
+>>>>>>> Stashed changes
 }
 
 // New route (screen or page)
 class ResultsDetailsView extends StatelessWidget {
+  
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -227,10 +408,19 @@ class ListViewThumbnail extends StatelessWidget {
             Container(
               width: MediaQuery.of(context).size.width,
               height: 170,
+<<<<<<< Updated upstream
               decoration: BoxDecoration(
                   image: DecorationImage(
                       image: NetworkImage("https://media.istockphoto.com/photos/the-university-of-florida-picture-id1181057283?k=20&m=1181057283&s=612x612&w=0&h=Q7CsWYDpQyD_0t2AkQadVf9c82cXM1BkSg9KpTPn22A="),
                       fit: BoxFit.cover)
+=======
+              child: Text(
+                majorsList.elementAt(0).major,
+                style: TextStyle(
+                  fontSize: 100,
+                  color: Colors.white,
+                ),
+>>>>>>> Stashed changes
               ),
             ),
             
@@ -261,6 +451,7 @@ class ListDetailsHeader extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
+<<<<<<< Updated upstream
         Text("Learn about Computer Science".toUpperCase(),
           style: TextStyle(
               fontWeight: FontWeight.w400,
@@ -279,6 +470,26 @@ class ListDetailsHeader extends StatelessWidget {
    
           
         ]))
+=======
+        Text(
+          majorsList.elementAt(1).major.toUpperCase(),
+          style: TextStyle(fontWeight: FontWeight.w400, color: Colors.cyan),
+        ),
+        Text(
+          "Engineering",
+          style: TextStyle(fontWeight: FontWeight.w500, fontSize: 32),
+        ),
+        Text.rich(TextSpan(
+            style: TextStyle(
+              fontSize: 13,
+              fontWeight: FontWeight.w300,
+            ),
+            children: <TextSpan>[
+              TextSpan(
+                  text:
+                      "An engineering major is an interdisciplinary study of math, science and some business principles. General engineering courses teach students how to design and conduct experiments, to identify and solve problems, to understand professional and ethical responsibility, and to communicate effectively."),
+            ]))
+>>>>>>> Stashed changes
       ],
     );
   }
@@ -320,4 +531,35 @@ class HorizontalLine extends StatelessWidget {
       ),
     );
   }
+}
+
+
+List<Majors> _getMajors() {
+
+
+  List results = [  "Engineering",
+  "Computer Science",
+  "Journalism",
+  "Biology",
+  "Nursing"];
+  List<Majors> list =  <Majors>[];
+
+
+
+  for( int i = 0; i < results.length; i++ ) {
+    for(int j = 0; j <  MajorsList.getMajors().length; j++) {
+      if (results[i] ==  MajorsList.getMajors()[j].major) {
+        print("good");
+        list.add(MajorsList.getMajors()[j]);
+        break;
+      }
+    }
+  }
+
+  
+  for(int i = 0; i < list.length; i++) {
+    print(list.elementAt(i).major);
+  }
+ print("done");
+ return list;
 }
