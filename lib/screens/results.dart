@@ -1,32 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:scrummy_bears/screens/MajorResults.dart';
-import 'package:scrummy_bears/screens/Storage.dart';
-import 'package:scrummy_bears/screens/majors.dart';
 
 List majors = [
-
+  "Engineering",
+  "Computer Science",
+  "Journalism",
+  "Biology",
+  "Nursing"
 ];
 
-List<Majors> majorsList =  <Majors>[];
-
-
 class _ResultState extends State<Results> {
-
   @override
-  void initState() {
-
-     Storage().readData().then((value) => {
-
-      majorsList =_getMajors(value)
-
-       });
-
-    super.initState();
-  }
-  
   Widget build(BuildContext context) {
     return Container(
-  
       decoration: BoxDecoration(
           gradient: LinearGradient(
               begin: Alignment.topCenter,
@@ -38,7 +24,6 @@ class _ResultState extends State<Results> {
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: Colors.transparent,
-  
 
         // We use [Builder] here to use a [context] that is a descendant of [Scaffold]
         //or else [Scaffold.of] will return null
@@ -79,7 +64,7 @@ class _ResultState extends State<Results> {
                         child: RaisedButton(
                           onPressed: () => Navigator.of(context).push(
                               MaterialPageRoute(
-                                  builder: (context) => MajorResults(majorsList.elementAt(0)))),
+                                  builder: (context) => MajorResults())),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(25.0),
                             side: BorderSide(
@@ -87,7 +72,7 @@ class _ResultState extends State<Results> {
                           ),
                           color: Colors.transparent,
                           child: Text(
-                            "1. ${majorsList.elementAt(0).major}",
+                            "1. ${majors[0]}",
                             style: TextStyle(color: Colors.white),
                           ),
                         ),
@@ -101,7 +86,7 @@ class _ResultState extends State<Results> {
                         child: RaisedButton(
                           onPressed: () => Navigator.of(context).push(
                               MaterialPageRoute(
-                                  builder: (context) => MajorResults(majorsList.elementAt(1)))),
+                                  builder: (context) => MajorResults())),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(25.0),
                             side: BorderSide(
@@ -109,7 +94,7 @@ class _ResultState extends State<Results> {
                           ),
                           color: Colors.transparent,
                           child: Text(
-                            "2. ${majorsList.elementAt(1).major}",
+                            "2. ${majors[1]}",
                             style: TextStyle(color: Colors.white),
                           ),
                         ),
@@ -123,7 +108,7 @@ class _ResultState extends State<Results> {
                         child: RaisedButton(
                           onPressed: () => Navigator.of(context).push(
                               MaterialPageRoute(
-                                  builder: (context) => MajorResults(majorsList.elementAt(2)))),
+                                  builder: (context) => MajorResults())),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(25.0),
                             side: BorderSide(
@@ -131,7 +116,7 @@ class _ResultState extends State<Results> {
                           ),
                           color: Colors.transparent,
                           child: Text(
-                            "3: ${majorsList.elementAt(2).major}",
+                            "3: ${majors[2]}",
                             style: TextStyle(color: Colors.white),
                           ),
                         ),
@@ -145,7 +130,7 @@ class _ResultState extends State<Results> {
                         child: RaisedButton(
                           onPressed: () => Navigator.of(context).push(
                               MaterialPageRoute(
-                                  builder: (context) => MajorResults(majorsList.elementAt(3)))),
+                                  builder: (context) => MajorResults())),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(25.0),
                             side: BorderSide(
@@ -153,7 +138,7 @@ class _ResultState extends State<Results> {
                           ),
                           color: Colors.transparent,
                           child: Text(
-                            "4. ${majorsList.elementAt(3).major}",
+                            "4. ${majors[3]}",
                             style: TextStyle(color: Colors.white),
                           ),
                         ),
@@ -165,12 +150,9 @@ class _ResultState extends State<Results> {
                         width: 460.0,
                         height: 70.0,
                         child: RaisedButton(
-                          onPressed: () => {
-                            Navigator.of(context).push(
+                          onPressed: () => Navigator.of(context).push(
                               MaterialPageRoute(
-                                  builder: (context) => MajorResults(majorsList.elementAt(3)))),
-                         
-  },
+                                  builder: (context) => MajorResults())),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(25.0),
                             side: BorderSide(
@@ -178,7 +160,7 @@ class _ResultState extends State<Results> {
                           ),
                           color: Colors.transparent,
                           child: Text(
-                            "5. ${majorsList.elementAt(4).major}",
+                            "5. ${majors[4]}",
                             style: TextStyle(color: Colors.white),
                           ),
                         ),
@@ -197,17 +179,12 @@ class _ResultState extends State<Results> {
 }
 
 class Results extends StatefulWidget {
-  // final List<Majors> majors;
-  // const Results(this.majors);
-
   @override
   _ResultState createState() => new _ResultState();
-  
 }
 
 // New route (screen or page)
 class ResultsDetailsView extends StatelessWidget {
-  
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -227,7 +204,6 @@ class ResultsDetailsView extends StatelessWidget {
           ],
         ));
   }
-
 }
 
 class ListViewThumbnail extends StatelessWidget {
@@ -255,7 +231,7 @@ class ListViewThumbnail extends StatelessWidget {
               width: MediaQuery.of(context).size.width,
               height: 170,
               child: Text(
-                majorsList.elementAt(0).major,
+                "Engineering",
                 style: TextStyle(
                   fontSize: 100,
                   color: Colors.white,
@@ -277,7 +253,7 @@ class ListDetailsHeader extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Text(
-          majorsList.elementAt(1).major.toUpperCase(),
+          "Engineering".toUpperCase(),
           style: TextStyle(fontWeight: FontWeight.w400, color: Colors.cyan),
         ),
         Text(
@@ -337,60 +313,4 @@ class HorizontalLine extends StatelessWidget {
       ),
     );
   }
-}
-
-
-List<Majors> _getMajors(String majors) {
-
- 
-  
-    List results = [  "Engineering",
-  "Computer Science",
-  "Journalism",
-  "Biology",
-  "Nursing"];
-
-  List res = [];
-bool read = false;
-String str = "";
-majors.split('').forEach((ch) {
-
-  
-    if (ch == ')') {
-      read = false;
-      res.add(str);
-      print(str);
-      str = "";
-    }
-  
-    if (read == true) {
-      str += ch;
-    }
-
-    if (ch == '(') {
-      read = true;
-    }
-
-
-
-});
-
-  print(res);
-
-  results = res;
-  List<Majors> list =  <Majors>[];
-
-
-
-  for( int i = 0; i < results.length; i++ ) {
-    for(int j = 0; j <  MajorsList.getMajors().length; j++) {
-      if (results[i] ==  MajorsList.getMajors()[j].major) {
-        list.add(MajorsList.getMajors()[j]);
-        break;
-      }
-    }
-  }
-
-
- return list;
 }
