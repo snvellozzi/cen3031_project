@@ -79,20 +79,38 @@ Widget build(BuildContext context) {
                             "1. ${majors[0]}",
 =======
 import 'package:scrummy_bears/screens/MajorResults.dart';
+<<<<<<< Updated upstream
+=======
+import 'package:scrummy_bears/screens/Storage.dart';
+>>>>>>> Stashed changes
 import 'package:scrummy_bears/screens/majors.dart';
 
 List majors = [
 
 ];
 
+<<<<<<< Updated upstream
 List<Majors> majorsList =  MajorsList.getMajors();
+=======
+List<Majors> majorsList =  <Majors>[];
+>>>>>>> Stashed changes
 
 
 class _ResultState extends State<Results> {
 
   @override
   void initState() {
+<<<<<<< Updated upstream
     majorsList =_getMajors();
+=======
+
+     Storage().readData().then((value) => {
+
+      majorsList =_getMajors(value)
+
+       });
+
+>>>>>>> Stashed changes
     super.initState();
   }
   
@@ -161,6 +179,9 @@ class _ResultState extends State<Results> {
                           color: Colors.transparent,
                           child: Text(
                             "1. ${majorsList.elementAt(0).major}",
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
                             style: TextStyle(color: Colors.white),
                         ),
@@ -361,6 +382,9 @@ class Results extends StatefulWidget {
 =======
   _ResultState createState() => new _ResultState();
   
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 }
 
@@ -534,14 +558,54 @@ class HorizontalLine extends StatelessWidget {
 }
 
 
+<<<<<<< Updated upstream
 List<Majors> _getMajors() {
 
 
   List results = [  "Engineering",
+=======
+List<Majors> _getMajors(String majors) {
+
+ 
+  
+    List results = [  "Engineering",
+>>>>>>> Stashed changes
   "Computer Science",
   "Journalism",
   "Biology",
   "Nursing"];
+<<<<<<< Updated upstream
+=======
+
+  List res = [];
+bool read = false;
+String str = "";
+majors.split('').forEach((ch) {
+
+  
+    if (ch == ')') {
+      read = false;
+      res.add(str);
+      print(str);
+      str = "";
+    }
+  
+    if (read == true) {
+      str += ch;
+    }
+
+    if (ch == '(') {
+      read = true;
+    }
+
+
+
+});
+
+  print(res);
+
+  results = res;
+>>>>>>> Stashed changes
   List<Majors> list =  <Majors>[];
 
 
@@ -549,17 +613,24 @@ List<Majors> _getMajors() {
   for( int i = 0; i < results.length; i++ ) {
     for(int j = 0; j <  MajorsList.getMajors().length; j++) {
       if (results[i] ==  MajorsList.getMajors()[j].major) {
+<<<<<<< Updated upstream
         print("good");
+=======
+>>>>>>> Stashed changes
         list.add(MajorsList.getMajors()[j]);
         break;
       }
     }
   }
 
+<<<<<<< Updated upstream
   
   for(int i = 0; i < list.length; i++) {
     print(list.elementAt(i).major);
   }
  print("done");
+=======
+
+>>>>>>> Stashed changes
  return list;
 }

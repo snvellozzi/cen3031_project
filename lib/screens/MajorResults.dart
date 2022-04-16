@@ -133,7 +133,11 @@ class _MajorResultsState extends State<MajorResults> {
                                     height: 10,
                                   ),
                                   AutoSizeText(
+<<<<<<< Updated upstream
                                     "common course",
+=======
+                                    "common",
+>>>>>>> Stashed changes
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 15,

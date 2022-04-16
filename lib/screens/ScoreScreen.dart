@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:scrummy_bears/Algorithm/Algorithm.dart';
+import 'package:scrummy_bears/screens/Storage.dart';
 import 'package:scrummy_bears/screens/results.dart';
 
 import 'majors.dart';
 
 
 class ScoreScreen extends StatelessWidget {
+  final Map map;
+  String results = "";
+  ScoreScreen(this.map);
+
   @override
   Widget build(BuildContext context) {
 <<<<<<< Updated upstream
@@ -109,9 +115,18 @@ class ScoreScreen extends StatelessWidget {
                         width: 400.0,
                         height: 100.0,
                         child: RaisedButton(
+<<<<<<< Updated upstream
                           onPressed: () =>  {
                             Navigator.of(context).push(MaterialPageRoute(builder: (context) => Results())),
                             },
+=======
+                          onPressed: () => {
+                              Storage().writeData(AlgorithmResults()).then((value) => {
+                                                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => Results()))
+
+                              })
+                          } ,
+>>>>>>> Stashed changes
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(25.0),
                             side: BorderSide(color: Color.fromRGBO(255, 255, 255, 1)),
@@ -141,6 +156,17 @@ class ScoreScreen extends StatelessWidget {
       ),
     );
   }
+<<<<<<< Updated upstream
 }
 
   
+=======
+
+  String AlgorithmResults() {
+
+    Algorithm algo = new Algorithm(map);
+
+    return algo.getResults();
+  }
+}
+>>>>>>> Stashed changes

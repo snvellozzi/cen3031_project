@@ -174,6 +174,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:scrummy_bears/screens/Storage.dart';
 import 'package:scrummy_bears/screens/quiz.dart';
 import 'package:scrummy_bears/screens/results.dart';
 
@@ -257,7 +258,12 @@ Widget build(BuildContext context) {
                       height: 70.0,
 
                       child: RaisedButton(
-                        onPressed: () =>  Navigator.of(context).push(MaterialPageRoute(builder: (context) => QuizApp())),
+                        onPressed: () => {
+                          Storage().clearData().then((value) => {
+                                                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => QuizApp()))
+
+                          })
+                        } ,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(25.0),
                           side: BorderSide(color: Color.fromRGBO(255, 255, 255, 1)),
