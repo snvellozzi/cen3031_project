@@ -1,5 +1,22 @@
 class Majors {
 
+  
+
+  String major;
+  String career1;
+  String career2;
+  String career3;
+  String description;
+  String courses;
+
+  //List<String> images;
+
+  Majors(this.major, this.description, this.courses, this.career1, this.career2,
+      this.career3);
+}
+
+class MajorsList {
+
   static List<Majors> getMajors() =>
       [
         Majors("Computer Science",
@@ -65,16 +82,6 @@ class Majors {
 
       ];
 
+      MajorsList();
 
-  String major;
-  String career1;
-  String career2;
-  String career3;
-  String description;
-  String courses;
-
-  //List<String> images;
-
-  Majors(this.major, this.description, this.courses, this.career1, this.career2,
-      this.career3);
 }

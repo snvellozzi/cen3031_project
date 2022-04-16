@@ -18,21 +18,17 @@ class _QuizAppState extends State<QuizApp> {
 
   List questionBank = [
     Question.name(
-        "Do you prefer working a group setting or independently?",  ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"]),
-    Question.name("Do you like animals?", ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"]),
+        "Do you consider yourself imaginative?",  ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"]),
+
+    Question.name("Are you able to think abstractly?", ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"]),
     
-    Question.name("Is career salary important?", ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"]),
+    Question.name("Do you enjoy solving problems?", ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"]),
 
-    Question.name("I like Politics?", ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"]),
-
-    Question.name("Do you like tech?", ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"]),
-
-    Question.name("Do you like people?", ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"]),
-
-    
-
-  
+   
   ];
+
+
+  var quizMap = new Map();
 
   bool _hasBeenPressed1 = false;
   bool _hasBeenPressed2 = false;
@@ -321,10 +317,35 @@ class _QuizAppState extends State<QuizApp> {
 
   _nextQuestion() {
     
-    print(_currentQuestionIndex);
 
+    if (_hasBeenPressed1) {
+        quizMap[questionBank[_currentQuestionIndex].questionText] = 2;
+    } 
+    else if(_hasBeenPressed2)
+    {
+        quizMap[questionBank[_currentQuestionIndex].questionText] = 1;
+
+    }
+     else if(_hasBeenPressed3)
+    {
+        quizMap[questionBank[_currentQuestionIndex].questionText] = 0;
+
+    }
+     else if(_hasBeenPressed4)
+    {
+        quizMap[questionBank[_currentQuestionIndex].questionText] = -1;
+
+    }
+     else if(_hasBeenPressed5)
+    {
+
+        quizMap[questionBank[_currentQuestionIndex].questionText] = -2;
+
+    }
+
+    print( quizMap[questionBank[_currentQuestionIndex].questionText]);
     if (_currentQuestionIndex == questionBank.length - 1) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) => ScoreScreen()));
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => ScoreScreen(quizMap)));
     }
 
     _updateQuestion();
