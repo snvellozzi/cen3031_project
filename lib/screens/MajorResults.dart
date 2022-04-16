@@ -2,14 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:scrummy_bears/screens/CareerResults.dart';
+import 'package:scrummy_bears/screens/majors.dart';
 import 'package:scrummy_bears/screens/results.dart';
 
 class MajorResults extends StatefulWidget {
+
+  Majors major;
+  MajorResults(this.major);
   @override
-  _MajorResultsState createState() => _MajorResultsState();
+  _MajorResultsState createState() => _MajorResultsState(this.major);
 }
 
 class _MajorResultsState extends State<MajorResults> {
+  Majors major;
+  _MajorResultsState(this.major);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -48,7 +55,7 @@ class _MajorResultsState extends State<MajorResults> {
                           child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: AutoSizeText(
-                          "Engineering",
+                          major.major,
                           style: TextStyle(color: Colors.white, fontSize: 30),
                         ),
                       )),
@@ -77,7 +84,7 @@ class _MajorResultsState extends State<MajorResults> {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: <Widget>[
                                   AutoSizeText(
-                                    "Description",
+                                    major.description,
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 20,
@@ -126,7 +133,7 @@ class _MajorResultsState extends State<MajorResults> {
                                     height: 10,
                                   ),
                                   AutoSizeText(
-                                    "Mathematics",
+                                    "common",
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 15,

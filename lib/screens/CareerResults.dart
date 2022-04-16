@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:scrummy_bears/screens/MajorResults.dart';
+import 'package:scrummy_bears/screens/majors.dart';
 
 class CareerResults extends StatefulWidget {
   @override
@@ -237,7 +238,7 @@ class _CareerResultsState extends State<CareerResults> {
                                   onPressed: () => Navigator.of(context).push(
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              MajorResults())),
+                                              MajorResults(Majors("major", "description", "courses", "career1", "career2", "career3")))),
                                   color: Colors.transparent,
                                   child: Icon(
                                     Icons.arrow_back,
