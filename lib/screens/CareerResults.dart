@@ -5,11 +5,25 @@ import 'package:scrummy_bears/screens/MajorResults.dart';
 import 'package:scrummy_bears/screens/majors.dart';
 
 class CareerResults extends StatefulWidget {
+<<<<<<< Updated upstream
   @override
   _CareerResultsState createState() => _CareerResultsState();
 }
 
 class _CareerResultsState extends State<CareerResults> {
+=======
+  Careers career;
+  Majors major;
+  CareerResults(this.career, this.major);
+  @override
+  _CareerResultsState createState() => _CareerResultsState(this.career, this.major);
+}
+
+class _CareerResultsState extends State<CareerResults> {
+    Careers career;
+    Majors major;
+  _CareerResultsState(this.career, this.major);
+>>>>>>> Stashed changes
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -68,7 +82,7 @@ class _CareerResultsState extends State<CareerResults> {
                                   color: Color.fromARGB(255, 228, 225, 231),
                                   width: 2),
                               borderRadius: BorderRadius.circular(30)),
-                          height: 100,
+                          height: 200,
                           child: Center(
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
@@ -238,7 +252,11 @@ class _CareerResultsState extends State<CareerResults> {
                                   onPressed: () => Navigator.of(context).push(
                                       MaterialPageRoute(
                                           builder: (context) =>
+<<<<<<< Updated upstream
                                               MajorResults(Majors("major", "description", "courses", "career1", "career2", "career3")))),
+=======
+                                              MajorResults(major))),
+>>>>>>> Stashed changes
                                   color: Colors.transparent,
                                   child: Icon(
                                     Icons.arrow_back,

@@ -16,16 +16,39 @@ class QuizApp extends StatefulWidget {
 class _QuizAppState extends State<QuizApp> {
   int _currentQuestionIndex = 0;
 
-  List questionBank = [
+List questionBank = [
     Question.name(
-        "Do you consider yourself imaginative?",  ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"]),
-
-    Question.name("Are you able to think abstractly?", ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"]),
-    
-    Question.name("Do you enjoy solving problems?", ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"]),
-
+        "I consider myself imaginative.",  ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"]),
+ 
+    Question.name("I am able to think abstractly about ideas.", ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"]),
    
+    Question.name("Problem solving is my forte.", ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"]),
+ 
+     Question.name("I am fascinated by nature and wildlife.", ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"]),
+ 
+   Question.name("I find myself researching history quite often.", ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"]),
+ 
+   Question.name("I'm a game addict.", ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"]),
+ 
+   Question.name("I like dealing with numbers and quantitative data.", ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"]),
+
+   Question.name("I would describe myself as a very social person.", ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"]),
+
+   Question.name("I find personal fulfillment in helping others.", ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"]),
+
+   Question.name("I enjoy being creative in my free time.", ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"]),
+
+  Question.name("I stay up-to-date with the news and media.", ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"]),
+
+    Question.name("I would describe myself as a very hands-on person.", ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"]),
+
+    Question.name("I feel comfortable using new technologies.", ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"]),
+
+    
+    Question.name("I like working with children.", ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"]),
+
   ];
+
 
 
   var quizMap = new Map();

@@ -75,7 +75,11 @@ class _MajorResultsState extends State<MajorResults> {
                                   color: Color.fromARGB(255, 228, 225, 231),
                                   width: 2),
                               borderRadius: BorderRadius.circular(30)),
+<<<<<<< Updated upstream
                           height: 200,
+=======
+                          height: 400,
+>>>>>>> Stashed changes
                           child: Center(
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
@@ -133,34 +137,34 @@ class _MajorResultsState extends State<MajorResults> {
                                     height: 10,
                                   ),
                                   AutoSizeText(
-                                    "common",
+                                    "${major.courses}",
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 15,
                                         fontWeight: FontWeight.bold),
                                   ),
                                   AutoSizeText(
-                                    "Calculus I",
+                                    "",
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 15),
                                   ),
                                   AutoSizeText(
-                                    "Calculus II",
+                                    "",
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 15),
                                   ),
                                   AutoSizeText(
-                                    "Calculus III",
+                                    "",
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 15),
                                   ),
                                   AutoSizeText(
-                                    "Elementary Differential Equations",
+                                    "",
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 15),
                                   ),
                                   AutoSizeText(
-                                    "Numerical Methods of Engineering Analysis",
+                                    "",
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 15),
                                   ),
@@ -168,44 +172,44 @@ class _MajorResultsState extends State<MajorResults> {
                                     height: 10,
                                   ),
                                   AutoSizeText(
-                                    "Physics",
+                                    "",
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 15,
                                         fontWeight: FontWeight.bold),
                                   ),
                                   AutoSizeText(
-                                    "Physics with Calculus I",
+                                    "",
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 15),
                                   ),
                                   AutoSizeText(
-                                    "Physics with Calculus II",
+                                    "",
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 15),
                                   ),
                                   AutoSizeText(
-                                    "Engineering Mechanics: Statics",
+                                    "",
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 15),
                                   ),
                                   AutoSizeText(
-                                    "Engineering Mechanics: Dynamics",
+                                    "",
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 15),
                                   ),
                                   AutoSizeText(
-                                    "Mechanics of Materials",
+                                    "",
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 15),
                                   ),
                                   AutoSizeText(
-                                    "Thermodynamics",
+                                    "",
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 15),
                                   ),
                                   AutoSizeText(
-                                    "Fluid Mechanics",
+                                    "",
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 15),
                                   ),
@@ -213,14 +217,14 @@ class _MajorResultsState extends State<MajorResults> {
                                     height: 10,
                                   ),
                                   AutoSizeText(
-                                    "Chemistry",
+                                    "",
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 15,
                                         fontWeight: FontWeight.bold),
                                   ),
                                   AutoSizeText(
-                                    "General Chemistry I",
+                                    "",
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 15),
                                   ),
@@ -265,7 +269,11 @@ class _MajorResultsState extends State<MajorResults> {
                                       onPressed: () => Navigator.of(context)
                                           .push(MaterialPageRoute(
                                               builder: (context) =>
+<<<<<<< Updated upstream
                                                   CareerResults())),
+=======
+                                                  CareerResults(major.careers[0], major))),
+>>>>>>> Stashed changes
                                       shape: RoundedRectangleBorder(
                                         borderRadius:
                                             BorderRadius.circular(25.0),
@@ -290,7 +298,11 @@ class _MajorResultsState extends State<MajorResults> {
                                       onPressed: () => Navigator.of(context)
                                           .push(MaterialPageRoute(
                                               builder: (context) =>
+<<<<<<< Updated upstream
                                                   CareerResults())),
+=======
+                                                  CareerResults(major.careers[0], major))),
+>>>>>>> Stashed changes
                                       shape: RoundedRectangleBorder(
                                         borderRadius:
                                             BorderRadius.circular(25.0),
@@ -315,7 +327,11 @@ class _MajorResultsState extends State<MajorResults> {
                                       onPressed: () => Navigator.of(context)
                                           .push(MaterialPageRoute(
                                               builder: (context) =>
+<<<<<<< Updated upstream
                                                   CareerResults())),
+=======
+                                                  CareerResults(major.careers[2],major))),
+>>>>>>> Stashed changes
                                       shape: RoundedRectangleBorder(
                                         borderRadius:
                                             BorderRadius.circular(25.0),

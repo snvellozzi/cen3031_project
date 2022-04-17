@@ -168,7 +168,7 @@ class _ResultState extends State<Results> {
                           onPressed: () => {
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                  builder: (context) => MajorResults(majorsList.elementAt(3)))),
+                                  builder: (context) => MajorResults(majorsList.elementAt(4)))),
                          
   },
                           shape: RoundedRectangleBorder(

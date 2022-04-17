@@ -1,3 +1,17 @@
+<<<<<<< Updated upstream
+=======
+import 'package:scrummy_bears/screens/careers.dart';
+
+
+class Courses {
+
+  String pre;
+  String core;
+
+  Courses(this.pre, this.core);
+
+}
+>>>>>>> Stashed changes
 class Majors {
 
   
@@ -32,7 +46,19 @@ class MajorsList {
         Majors("Biology",
             "Biology explores the origins, structures, and functions of organisms. Biologists investigate growth, evolution, and interactions among living entities. Degrees in the field introduce students to fundamental knowledge about the natural world while also training them to carry out research, solve problems, and think critically.",
             "Integrated Principles of Biology 1, Integrated Principles of Biology 2, General Chemistry 1, General Chemistry 2, Organic Chemistry 1, Calculus 1",
+<<<<<<< Updated upstream
             "Biologist", "Research Scientist", "Biology Teacher"),
+=======
+            "Biologist", "Research Scientist", "Biology Teacher", [ Careers("Biology", "Biologist", "Biologists study organisms and plant life to learn more about their composition, behaviors, habitats, and how they interact with other organisms and their environment.",
+        "\$66,975 per year", "Bachelor's (4 years) or Master's", "Conduct research; collect samples and measurements; perform tests and experiments; interpret and report their findings."),
+
+    Careers("Biology", "Research Scientist", "Research scientists are responsible for designing, undertaking and analysing information from controlled laboratory-based investigations, experiments and trials.",
+        "\$97,507 per year", "Master's or Ph.D.", "Creating research proposals; planning and conducting experiments; collecting samples; monitoring experiments."),
+
+    Careers("Biology", "Biology Teacher", "The biology teacher's responsibilities include preparing lesson plans, tests and assignments, supervising students during investigations and experiments, and acting as a field trip chaperone.",
+        "\$55,094 per year", "Bachelor's (4 years)", "\n-Develop and initiate biology teaching materials and course content;\n -deliver lectures to students on living organisms and things; teach students on how cells function in relation to their environments;\n- teach and encourage students to conduct experiments in biology."),
+]),
+>>>>>>> Stashed changes
 
         Majors("Business",
             "A bachelor's degree in business teaches students to analyze data, supervise teams, and make business strategy decisions. Undergraduates can specialize their degrees by choosing a bachelor's in business management, which emphasizes management skills, or a bachelor's in entrepreneurship to become a business founder. Many programs also offer electives or concentrations in human resources management, healthcare administration, or logistics.",
