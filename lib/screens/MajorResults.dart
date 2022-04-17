@@ -140,99 +140,13 @@ class _MajorResultsState extends State<MajorResults> {
                                         fontSize: 15,
                                         fontWeight: FontWeight.bold),
                                   ),
-                                  AutoSizeText(
-                                    "",
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 15),
-                                  ),
-                                  AutoSizeText(
-                                    "",
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 15),
-                                  ),
-                                  AutoSizeText(
-                                    "",
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 15),
-                                  ),
-                                  AutoSizeText(
-                                    "",
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 15),
-                                  ),
-                                  AutoSizeText(
-                                    "",
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 15),
-                                  ),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  AutoSizeText(
-                                    "",
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  AutoSizeText(
-                                    "",
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 15),
-                                  ),
-                                  AutoSizeText(
-                                    "",
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 15),
-                                  ),
-                                  AutoSizeText(
-                                    "",
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 15),
-                                  ),
-                                  AutoSizeText(
-                                    "",
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 15),
-                                  ),
-                                  AutoSizeText(
-                                    "",
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 15),
-                                  ),
-                                  AutoSizeText(
-                                    "",
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 15),
-                                  ),
-                                  AutoSizeText(
-                                    "",
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 15),
-                                  ),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  AutoSizeText(
-                                    "",
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  AutoSizeText(
-                                    "",
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 15),
-                                  ),
+                                  
                                 ],
                               ),
                             ),
                           ),
                         ),
-                        SizedBox(
-                          height: 10,
-                        ),
+
                         Container(
                           width: 460.0,
                           decoration: BoxDecoration(
