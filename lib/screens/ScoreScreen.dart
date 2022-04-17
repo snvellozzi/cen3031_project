@@ -1,11 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:scrummy_bears/Algorithm/Algorithm.dart';
+import 'package:scrummy_bears/screens/Storage.dart';
 import 'package:scrummy_bears/screens/results.dart';
 
 
 class ScoreScreen extends StatelessWidget {
+  final Map map;
+  String results = "";
+  ScoreScreen(this.map);
+
   @override
   Widget build(BuildContext context) {
+    String AlgorithmResults() {
+
+      Algorithm algo = new Algorithm(map);
+
+      return algo.getResults();
+    }
+
+    Future<void> write() {
+      print("first");
+      return  Storage().writeData(AlgorithmResults());
+
+    }
+
+    Future<void> run() async {
+      await write();
+      print("second");
+      Navigator.of(context).push(MaterialPageRoute(builder: (context) => Results()));
+
+
+    }
     return Container(
       decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -73,7 +99,10 @@ class ScoreScreen extends StatelessWidget {
                         width: 400.0,
                         height: 100.0,
                         child: RaisedButton(
-                          onPressed: () =>  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Results())),
+                          onPressed: () => {
+
+                            run(),
+                          } ,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(25.0),
                             side: BorderSide(color: Color.fromRGBO(255, 255, 255, 1)),
@@ -102,6 +131,9 @@ class ScoreScreen extends StatelessWidget {
 
         ),
       ),
+
     );
   }
+
+
 }

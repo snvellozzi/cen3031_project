@@ -2,13 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:scrummy_bears/screens/MajorResults.dart';
+import 'package:scrummy_bears/screens/careers.dart';
+import 'package:scrummy_bears/screens/majors.dart';
 
 class CareerResults extends StatefulWidget {
+  Careers career;
+  Majors major;
+  CareerResults(this.career, this.major);
   @override
-  _CareerResultsState createState() => _CareerResultsState();
+  _CareerResultsState createState() => _CareerResultsState(this.career, this.major);
 }
 
 class _CareerResultsState extends State<CareerResults> {
+  Careers career;
+  Majors major;
+  _CareerResultsState(this.career, this.major);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -17,9 +25,9 @@ class _CareerResultsState extends State<CareerResults> {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
-            Color.fromRGBO(143, 22, 255, 1),
-            Color.fromRGBO(16, 126, 255, 1),
-          ])),
+                Color.fromRGBO(143, 22, 255, 1),
+                Color.fromRGBO(16, 126, 255, 1),
+              ])),
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: Colors.transparent,
@@ -45,12 +53,12 @@ class _CareerResultsState extends State<CareerResults> {
                       height: 130,
                       child: Center(
                           child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: AutoSizeText(
-                          "R&D Engineer",
-                          style: TextStyle(color: Colors.white, fontSize: 30),
-                        ),
-                      )),
+                            padding: const EdgeInsets.all(8.0),
+                            child: AutoSizeText(
+                              career.title,
+                              style: TextStyle(color: Colors.white, fontSize: 30),
+                            ),
+                          )),
                     ),
                   ),
                   Column(
@@ -67,7 +75,7 @@ class _CareerResultsState extends State<CareerResults> {
                                   color: Color.fromARGB(255, 228, 225, 231),
                                   width: 2),
                               borderRadius: BorderRadius.circular(30)),
-                          height: 100,
+                          height: 200,
                           child: Center(
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
@@ -86,7 +94,8 @@ class _CareerResultsState extends State<CareerResults> {
                                     height: 4,
                                   ),
                                   AutoSizeText(
-                                    "As R&D Engineer, you will be responsible for developing and improving a wide range of production processes.",
+                                    // "As R&D Engineer, you will be responsible for developing and improving a wide range of production processes.",
+                                    career.description,
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 15),
                                   ),
@@ -125,7 +134,7 @@ class _CareerResultsState extends State<CareerResults> {
                                     height: 10,
                                   ),
                                   AutoSizeText(
-                                    "\$92,409 per year",
+                                    "${career.salary}",
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 15,
@@ -166,7 +175,7 @@ class _CareerResultsState extends State<CareerResults> {
                                     height: 10,
                                   ),
                                   AutoSizeText(
-                                    "Bachelor's (4 years)",
+                                    "${career.education}",
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 15,
@@ -207,7 +216,7 @@ class _CareerResultsState extends State<CareerResults> {
                                     height: 10,
                                   ),
                                   AutoSizeText(
-                                    "-Develop new products\n-Redesign existing products\n-Perform research and testing on product concepts.",
+                                    "${career.responsibilities}",
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 15,
@@ -232,12 +241,12 @@ class _CareerResultsState extends State<CareerResults> {
                                     borderRadius: BorderRadius.circular(25.0),
                                     side: BorderSide(
                                         color:
-                                            Color.fromRGBO(255, 255, 255, 1)),
+                                        Color.fromRGBO(255, 255, 255, 1)),
                                   ),
                                   onPressed: () => Navigator.of(context).push(
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              MajorResults())),
+                                              MajorResults(major))),
                                   color: Colors.transparent,
                                   child: Icon(
                                     Icons.arrow_back,

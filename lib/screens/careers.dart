@@ -2,7 +2,7 @@ class Careers {
 
   static List<Careers> getCareers() =>  [
     Careers("Computer Science", "Software Engineer", "A software engineer is a person who applies the principles of software engineering to design, develop, maintain, test, and evaluate computer software.",
-            "\$108,249", "Bachelor's (4 years)", "Analyse user requirements; write and test code; research, design and write new software programs; evaluate the software and systems that make computers and hardware work."),
+        "\$108,249", "Bachelor's (4 years)", "Analyse user requirements; write and test code; research, design and write new software programs; evaluate the software and systems that make computers and hardware work."),
 
     Careers("Computer Science", "Product Manager", "A product manager is the person who identifies the customer need and the larger business objectives that a product or feature will fulfill, articulates what success looks like for a product, and rallies a team to turn that vision into a reality.",
         "\$113,446", "Bachelor's (4 years)", "Define the product strategy and roadmap; work with external third parties to assess partnerships and licensing opportunities; be an expert with respect to the competition; act as a leader within the company."),
@@ -107,8 +107,9 @@ class Careers {
 
 
 
+
   String major;
-  String careers;
+  String title;
   String description;
   String salary;
   String education;
@@ -116,5 +117,5 @@ class Careers {
 
   //List<String> images;
 
-  Careers(this.major, this.careers, this.description, this.salary, this.education, this.responsibilities);
+  Careers(this.major, this.title, this.description, this.salary, this.education, this.responsibilities);
 }
