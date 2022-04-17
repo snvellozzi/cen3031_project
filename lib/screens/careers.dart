@@ -107,8 +107,9 @@ class Careers {
 
 
 
+
   String major;
-  String careers;
+  String title;
   String description;
   String salary;
   String education;
@@ -116,5 +117,5 @@ class Careers {
 
   //List<String> images;
 
-  Careers(this.major, this.careers, this.description, this.salary, this.education, this.responsibilities);
+  Careers(this.major, this.title, this.description, this.salary, this.education, this.responsibilities);
 }

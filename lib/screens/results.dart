@@ -13,15 +13,21 @@ List<Majors> majorsList =  <Majors>[];
 class _ResultState extends State<Results> {
 
   @override
-  void initState() {
+  Future<void> readData() async {
+ 
+  }
+   initState() {
+    
 
-     Storage().readData().then((value) => {
-
-      majorsList =_getMajors(value)
+         Storage().readData().then((value) => {
+      
+      majorsList =_getMajors(value),
+        super.initState()
 
        });
+    
 
-    super.initState();
+  
   }
   
   Widget build(BuildContext context) {

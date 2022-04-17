@@ -2,16 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:scrummy_bears/screens/MajorResults.dart';
+import 'package:scrummy_bears/screens/careers.dart';
 import 'package:scrummy_bears/screens/majors.dart';
 
 class CareerResults extends StatefulWidget {
-<<<<<<< Updated upstream
-  @override
-  _CareerResultsState createState() => _CareerResultsState();
-}
-
-class _CareerResultsState extends State<CareerResults> {
-=======
   Careers career;
   Majors major;
   CareerResults(this.career, this.major);
@@ -23,7 +17,6 @@ class _CareerResultsState extends State<CareerResults> {
     Careers career;
     Majors major;
   _CareerResultsState(this.career, this.major);
->>>>>>> Stashed changes
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -62,7 +55,7 @@ class _CareerResultsState extends State<CareerResults> {
                           child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: AutoSizeText(
-                          "R&D Engineer",
+                            career.title,
                           style: TextStyle(color: Colors.white, fontSize: 30),
                         ),
                       )),
@@ -101,7 +94,8 @@ class _CareerResultsState extends State<CareerResults> {
                                     height: 4,
                                   ),
                                   AutoSizeText(
-                                    "As R&D Engineer, you will be responsible for developing and improving a wide range of production processes.",
+                                    // "As R&D Engineer, you will be responsible for developing and improving a wide range of production processes.",
+                                    career.description,
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 15),
                                   ),
@@ -140,7 +134,7 @@ class _CareerResultsState extends State<CareerResults> {
                                     height: 10,
                                   ),
                                   AutoSizeText(
-                                    "\$92,409 per year",
+                                    "${career.salary}",
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 15,
@@ -181,7 +175,7 @@ class _CareerResultsState extends State<CareerResults> {
                                     height: 10,
                                   ),
                                   AutoSizeText(
-                                    "Bachelor's (4 years)",
+                                    "${career.education}",
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 15,
@@ -222,7 +216,7 @@ class _CareerResultsState extends State<CareerResults> {
                                     height: 10,
                                   ),
                                   AutoSizeText(
-                                    "-Develop new products\n-Redesign existing products\n-Perform research and testing on product concepts.",
+                                    "${career.responsibilities}",
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 15,
@@ -252,11 +246,7 @@ class _CareerResultsState extends State<CareerResults> {
                                   onPressed: () => Navigator.of(context).push(
                                       MaterialPageRoute(
                                           builder: (context) =>
-<<<<<<< Updated upstream
-                                              MajorResults(Majors("major", "description", "courses", "career1", "career2", "career3")))),
-=======
                                               MajorResults(major))),
->>>>>>> Stashed changes
                                   color: Colors.transparent,
                                   child: Icon(
                                     Icons.arrow_back,

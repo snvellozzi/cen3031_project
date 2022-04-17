@@ -75,11 +75,7 @@ class _MajorResultsState extends State<MajorResults> {
                                   color: Color.fromARGB(255, 228, 225, 231),
                                   width: 2),
                               borderRadius: BorderRadius.circular(30)),
-<<<<<<< Updated upstream
-                          height: 200,
-=======
                           height: 400,
->>>>>>> Stashed changes
                           child: Center(
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
@@ -98,7 +94,8 @@ class _MajorResultsState extends State<MajorResults> {
                                     height: 4,
                                   ),
                                   AutoSizeText(
-                                    "An engineering major is an interdisciplinary study of math, science and some business principles. General engineering courses teach students how to design and conduct experiments, to identify and solve problems, to understand professional and ethical responsibility, and to communicate effectively.",
+                                    // "An engineering major is an interdisciplinary study of math, science and some business principles. General engineering courses teach students how to design and conduct experiments, to identify and solve problems, to understand professional and ethical responsibility, and to communicate effectively.",
+                                    "",
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 15),
                                   ),
@@ -269,11 +266,7 @@ class _MajorResultsState extends State<MajorResults> {
                                       onPressed: () => Navigator.of(context)
                                           .push(MaterialPageRoute(
                                               builder: (context) =>
-<<<<<<< Updated upstream
-                                                  CareerResults())),
-=======
                                                   CareerResults(major.careers[0], major))),
->>>>>>> Stashed changes
                                       shape: RoundedRectangleBorder(
                                         borderRadius:
                                             BorderRadius.circular(25.0),
@@ -283,7 +276,8 @@ class _MajorResultsState extends State<MajorResults> {
                                       ),
                                       color: Colors.transparent,
                                       child: Text(
-                                        "R&D Engineer",
+                                        // "R&D Engineer",
+                                        major.careers[0].title,
                                         style: TextStyle(color: Colors.white),
                                       ),
                                     ),
@@ -298,11 +292,7 @@ class _MajorResultsState extends State<MajorResults> {
                                       onPressed: () => Navigator.of(context)
                                           .push(MaterialPageRoute(
                                               builder: (context) =>
-<<<<<<< Updated upstream
-                                                  CareerResults())),
-=======
                                                   CareerResults(major.careers[0], major))),
->>>>>>> Stashed changes
                                       shape: RoundedRectangleBorder(
                                         borderRadius:
                                             BorderRadius.circular(25.0),
@@ -312,7 +302,8 @@ class _MajorResultsState extends State<MajorResults> {
                                       ),
                                       color: Colors.transparent,
                                       child: Text(
-                                        "Mechanical Engineer",
+                                        // "Mechanical Engineer",
+                                        major.careers[1].title,
                                         style: TextStyle(color: Colors.white),
                                       ),
                                     ),
@@ -327,11 +318,7 @@ class _MajorResultsState extends State<MajorResults> {
                                       onPressed: () => Navigator.of(context)
                                           .push(MaterialPageRoute(
                                               builder: (context) =>
-<<<<<<< Updated upstream
-                                                  CareerResults())),
-=======
                                                   CareerResults(major.careers[2],major))),
->>>>>>> Stashed changes
                                       shape: RoundedRectangleBorder(
                                         borderRadius:
                                             BorderRadius.circular(25.0),
@@ -341,7 +328,8 @@ class _MajorResultsState extends State<MajorResults> {
                                       ),
                                       color: Colors.transparent,
                                       child: Text(
-                                        "Engineering Manager",
+                                        // "Engineering Manager",
+                                        major.careers[2].title,
                                         style: TextStyle(color: Colors.white),
                                       ),
                                     ),

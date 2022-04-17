@@ -12,6 +12,26 @@ class ScoreScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+      String AlgorithmResults() {
+
+    Algorithm algo = new Algorithm(map);
+
+    return algo.getResults();
+  }
+
+  Future<void> write() {
+    print("first");
+     return  Storage().writeData(AlgorithmResults());
+
+  }
+
+  Future<void> run() async {
+    await write();
+    print("second");
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => Results()));
+
+    
+  }
     return Container(
       decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -80,10 +100,8 @@ class ScoreScreen extends StatelessWidget {
                         height: 100.0,
                         child: RaisedButton(
                           onPressed: () => {
-                              Storage().writeData(AlgorithmResults()).then((value) => {
-                                                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => Results()))
-
-                              })
+                       
+                              run(),
                           } ,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(25.0),
@@ -113,13 +131,9 @@ class ScoreScreen extends StatelessWidget {
 
         ),
       ),
+    
     );
   }
 
-  String AlgorithmResults() {
 
-    Algorithm algo = new Algorithm(map);
-
-    return algo.getResults();
-  }
 }
