@@ -9,7 +9,7 @@ class HomeState extends State<Home>{
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
@@ -33,7 +33,7 @@ class HomeState extends State<Home>{
 
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
-                SizedBox(
+                const SizedBox(
                   height: 200,
                 ),
 
@@ -41,9 +41,9 @@ class HomeState extends State<Home>{
                   padding: const EdgeInsets.all(12.0),
                   child: Container(
 
-                    child: Center(
+                    child: const Center(
                         child: Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: EdgeInsets.all(8.0),
 
                           child: Text(
                             "Major Matcher",
@@ -65,7 +65,7 @@ class HomeState extends State<Home>{
                     crossAxisAlignment: CrossAxisAlignment.center,
 
                     children: <Widget>[
-                      SizedBox(
+                      const SizedBox(
                         height: 50,
                       ),
 
@@ -82,15 +82,15 @@ class HomeState extends State<Home>{
                           } ,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(25.0),
-                            side: BorderSide(color: Color.fromRGBO(255, 255, 255, 1)),
+                            side: const BorderSide(color: const Color.fromRGBO(255, 255, 255, 1)),
                           ),
-                          color:Colors.transparent,                      child: Text(
+                          color:Colors.transparent,                      child: const Text(
                           "Take Quiz",
-                          style: TextStyle(color: Colors.white),
+                          style: const TextStyle(color: Colors.white),
                         ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 30,
                       ),
                       Container(
@@ -100,37 +100,27 @@ class HomeState extends State<Home>{
                           onPressed: () =>  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Results())),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(25.0),
-                            side: BorderSide(color: Color.fromRGBO(255, 255, 255, 1)),
+                            side: const BorderSide(color: Color.fromRGBO(255, 255, 255, 1)),
                           ),
                           color: Colors.transparent,
-                          child: Text(
+                          child: const Text(
                             "See Past Results",
-                            style: TextStyle(color: Colors.white),
+                            style: const TextStyle(color: Colors.white),
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
-
-
-
-
                     ]),
-
               ],
-
             ),
-
           ),
-
         ),
       ),
     );
   }
 }
-
-
 
 class Home extends StatefulWidget {
   @override

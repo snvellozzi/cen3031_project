@@ -22,7 +22,6 @@ class Algorithm {
   void updateMajor(String question, int score) {
     switch(question) {
       case "I consider myself imaginative.": {
-
         if (score == 2) {
           majorsRank["Computer Science"] += 6;
           majorsRank["Math/Statistics"] += 6;
@@ -36,7 +35,6 @@ class Algorithm {
           majorsRank["Law/Political Science"] += 4;
           majorsRank["Art/Design"] += 10;
           majorsRank["Environmental Science"] += 2;
-
         }
         else if(score == 1) {
           majorsRank["Computer Science"] += 5;
@@ -93,13 +91,10 @@ class Algorithm {
           majorsRank["Law/Political Science"] += 6;
           majorsRank["Art/Design"] += -1;
           majorsRank["Environmental Science"] += 6;
-
         }
-
       }
       break;
       case "I am able to think abstractly about ideas.": {
-
         if (score == 2) {
           majorsRank["Computer Science"] += 8;
           majorsRank["Math/Statistics"] += 9;
@@ -113,7 +108,6 @@ class Algorithm {
           majorsRank["Law/Political Science"] += 5;
           majorsRank["Art/Design"] += 6;
           majorsRank["Environmental Science"] += 3;
-
         }
         else if(score == 1) {
           majorsRank["Computer Science"] += 7;
@@ -170,13 +164,10 @@ class Algorithm {
           majorsRank["Law/Political Science"] += 4;
           majorsRank["Art/Design"] += -1;
           majorsRank["Environmental Science"] += 5;
-
         }
-
       }
       break;
       case "Problem solving is my forte.": {
-
         if (score == 2) {
           majorsRank["Computer Science"] += 10;
           majorsRank["Math/Statistics"] += 10;
@@ -190,7 +181,6 @@ class Algorithm {
           majorsRank["Law/Political Science"] += 5;
           majorsRank["Art/Design"] += 3;
           majorsRank["Environmental Science"] += 6;
-
         }
         else if(score == 1) {
           majorsRank["Computer Science"] += 9;
@@ -247,13 +237,10 @@ class Algorithm {
           majorsRank["Law/Political Science"] += 4;
           majorsRank["Art/Design"] += 3;
           majorsRank["Environmental Science"] += 3;
-
         }
-
       }
       break;
       case "I am fascinated by nature and wildlife.": {
-
         if (score == 2) {
           majorsRank["Computer Science"] += 1;
           majorsRank["Math/Statistics"] += 2;
@@ -267,7 +254,6 @@ class Algorithm {
           majorsRank["Law/Political Science"] += 0;
           majorsRank["Art/Design"] += 7;
           majorsRank["Environmental Science"] += 10;
-
         }
         else if(score == 1) {
           majorsRank["Computer Science"] += 1;
@@ -324,13 +310,10 @@ class Algorithm {
           majorsRank["Law/Political Science"] += 7;
           majorsRank["Art/Design"] += 2;
           majorsRank["Environmental Science"] += 0;
-
         }
-
       }
       break;
       case "I find myself researching history quite often.": {
-
         if (score == 2) {
           majorsRank["Computer Science"] += 0;
           majorsRank["Math/Statistics"] += 3;
@@ -344,7 +327,6 @@ class Algorithm {
           majorsRank["Law/Political Science"] += 10;
           majorsRank["Art/Design"] += 2;
           majorsRank["Environmental Science"] += 2;
-
         }
         else if(score == 1) {
           majorsRank["Computer Science"] += 1;
@@ -401,13 +383,10 @@ class Algorithm {
           majorsRank["Law/Political Science"] += -5;
           majorsRank["Art/Design"] += 1;
           majorsRank["Environmental Science"] += 4;
-
         }
-
       }
       break;
       case "I’m a game addict.": {
-
         if (score == 2) {
           majorsRank["Computer Science"] += 8;
           majorsRank["Math/Statistics"] += 4;
@@ -421,7 +400,6 @@ class Algorithm {
           majorsRank["Law/Political Science"] += 0;
           majorsRank["Art/Design"] += 10;
           majorsRank["Environmental Science"] += 0;
-
         }
         else if(score == 1) {
           majorsRank["Computer Science"] += 7;
@@ -478,13 +456,10 @@ class Algorithm {
           majorsRank["Law/Political Science"] += 7;
           majorsRank["Art/Design"] += -5;
           majorsRank["Environmental Science"] += 5;
-
         }
-
       }
       break;
       case "I like dealing with numbers and quantitative data.": {
-
         if (score == 2) {
           majorsRank["Computer Science"] += 10;
           majorsRank["Math/Statistics"] += 10;
@@ -498,7 +473,6 @@ class Algorithm {
           majorsRank["Law/Political Science"] += 0;
           majorsRank["Art/Design"] += 0;
           majorsRank["Environmental Science"] += 0;
-
         }
         else if(score == 1) {
           majorsRank["Computer Science"] += 9;
@@ -555,14 +529,10 @@ class Algorithm {
           majorsRank["Law/Political Science"] += 7;
           majorsRank["Art/Design"] += 5;
           majorsRank["Environmental Science"] += 1;
-
         }
-
       }
       break;
-      case "I would describe myself as a very social person.":
-        {
-
+      case "I would describe myself as a very social person.": {
           if (score == 2) {
             majorsRank["Computer Science"] += 1;
             majorsRank["Math/Statistics"] += 1;
@@ -576,7 +546,6 @@ class Algorithm {
             majorsRank["Law/Political Science"] += 10;
             majorsRank["Art/Design"] += 6;
             majorsRank["Environmental Science"] += 4;
-
           }
           else if(score == 1) {
             majorsRank["Computer Science"] += 2;
@@ -633,91 +602,84 @@ class Algorithm {
             majorsRank["Law/Political Science"] += -3;
             majorsRank["Art/Design"] += 4;
             majorsRank["Environmental Science"] += 3;
-
           }
-
         }
         break;
-      case "I find personal fulfillment in helping others.": {
+        case "I find personal fulfillment in helping others.": {
+          if (score == 2) {
+            majorsRank["Computer Science"] += 5;
+            majorsRank["Math/Statistics"] += 3;
+            majorsRank["Journalism"] += 8;
+            majorsRank["Biology"] += 7;
+            majorsRank["Business"] += 7;
+            majorsRank["Engineering"] += 6;
+            majorsRank["Nursing"] += 10;
+            majorsRank["Psychology"] += 10;
+            majorsRank["Education"] += 10;
+            majorsRank["Law/Political Science"] += 19;
+            majorsRank["Art/Design"] += 4;
+            majorsRank["Environmental Science"] += 7;
 
-        if (score == 2) {
-          majorsRank["Computer Science"] += 5;
-          majorsRank["Math/Statistics"] += 3;
-          majorsRank["Journalism"] += 8;
-          majorsRank["Biology"] += 7;
-          majorsRank["Business"] += 7;
-          majorsRank["Engineering"] += 6;
-          majorsRank["Nursing"] += 10;
-          majorsRank["Psychology"] += 10;
-          majorsRank["Education"] += 10;
-          majorsRank["Law/Political Science"] += 19;
-          majorsRank["Art/Design"] += 4;
-          majorsRank["Environmental Science"] += 7;
-
+          }
+          else if(score == 1) {
+            majorsRank["Computer Science"] += 5;
+            majorsRank["Math/Statistics"] += 5;
+            majorsRank["Journalism"] += 7;
+            majorsRank["Biology"] += 7;
+            majorsRank["Business"] += 6;
+            majorsRank["Engineering"] += 5;
+            majorsRank["Nursing"] += 8;
+            majorsRank["Psychology"] += 9;
+            majorsRank["Education"] += 9;
+            majorsRank["Law/Political Science"] += 8;
+            majorsRank["Art/Design"] += 4;
+            majorsRank["Environmental Science"] += 7;
+          }
+          else if(score == 0) {
+            majorsRank["Computer Science"] += 0;
+            majorsRank["Math/Statistics"] += 0;
+            majorsRank["Journalism"] += 0;
+            majorsRank["Biology"] += 0;
+            majorsRank["Business"] += 0;
+            majorsRank["Engineering"] += 0;
+            majorsRank["Nursing"] += 0;
+            majorsRank["Psychology"] += 0;
+            majorsRank["Education"] += 0;
+            majorsRank["Law/Political Science"] += 0;
+            majorsRank["Art/Design"] += 0;
+            majorsRank["Environmental Science"] += 0;
+          }
+          else if(score == -1) {
+            majorsRank["Computer Science"] += 4;
+            majorsRank["Math/Statistics"] += 5;
+            majorsRank["Journalism"] += 0;
+            majorsRank["Biology"] += 1;
+            majorsRank["Business"] += 3;
+            majorsRank["Engineering"] += 2;
+            majorsRank["Nursing"] += 0;
+            majorsRank["Psychology"] += 0;
+            majorsRank["Education"] += 0;
+            majorsRank["Law/Political Science"] += 0;
+            majorsRank["Art/Design"] += 3;
+            majorsRank["Environmental Science"] += 0;
+          }
+          else {
+            majorsRank["Computer Science"] += 0;
+            majorsRank["Math/Statistics"] += 0;
+            majorsRank["Journalism"] += 0;
+            majorsRank["Biology"] += 0;
+            majorsRank["Business"] += 0;
+            majorsRank["Engineering"] += 0;
+            majorsRank["Nursing"] += -5;
+            majorsRank["Psychology"] += -5;
+            majorsRank["Education"] += -5;
+            majorsRank["Law/Political Science"] += -3;
+            majorsRank["Art/Design"] += 0;
+            majorsRank["Environmental Science"] += 0;
         }
-        else if(score == 1) {
-          majorsRank["Computer Science"] += 5;
-          majorsRank["Math/Statistics"] += 5;
-          majorsRank["Journalism"] += 7;
-          majorsRank["Biology"] += 7;
-          majorsRank["Business"] += 6;
-          majorsRank["Engineering"] += 5;
-          majorsRank["Nursing"] += 8;
-          majorsRank["Psychology"] += 9;
-          majorsRank["Education"] += 9;
-          majorsRank["Law/Political Science"] += 8;
-          majorsRank["Art/Design"] += 4;
-          majorsRank["Environmental Science"] += 7;
-        }
-        else if(score == 0) {
-          majorsRank["Computer Science"] += 0;
-          majorsRank["Math/Statistics"] += 0;
-          majorsRank["Journalism"] += 0;
-          majorsRank["Biology"] += 0;
-          majorsRank["Business"] += 0;
-          majorsRank["Engineering"] += 0;
-          majorsRank["Nursing"] += 0;
-          majorsRank["Psychology"] += 0;
-          majorsRank["Education"] += 0;
-          majorsRank["Law/Political Science"] += 0;
-          majorsRank["Art/Design"] += 0;
-          majorsRank["Environmental Science"] += 0;
-        }
-        else if(score == -1) {
-          majorsRank["Computer Science"] += 4;
-          majorsRank["Math/Statistics"] += 5;
-          majorsRank["Journalism"] += 0;
-          majorsRank["Biology"] += 1;
-          majorsRank["Business"] += 3;
-          majorsRank["Engineering"] += 2;
-          majorsRank["Nursing"] += 0;
-          majorsRank["Psychology"] += 0;
-          majorsRank["Education"] += 0;
-          majorsRank["Law/Political Science"] += 0;
-          majorsRank["Art/Design"] += 3;
-          majorsRank["Environmental Science"] += 0;
-        }
-        else {
-          majorsRank["Computer Science"] += 0;
-          majorsRank["Math/Statistics"] += 0;
-          majorsRank["Journalism"] += 0;
-          majorsRank["Biology"] += 0;
-          majorsRank["Business"] += 0;
-          majorsRank["Engineering"] += 0;
-          majorsRank["Nursing"] += -5;
-          majorsRank["Psychology"] += -5;
-          majorsRank["Education"] += -5;
-          majorsRank["Law/Political Science"] += -3;
-          majorsRank["Art/Design"] += 0;
-          majorsRank["Environmental Science"] += 0;
-
-        }
-
       }
       break;
-
       case "I enjoy being creative in my free time.": {
-
         if (score == 2) {
           majorsRank["Computer Science"] += 5;
           majorsRank["Math/Statistics"] += 5;
@@ -731,7 +693,6 @@ class Algorithm {
           majorsRank["Law/Political Science"] += 0;
           majorsRank["Art/Design"] += 8;
           majorsRank["Environmental Science"] += 5;
-
         }
         else if(score == 1) {
           majorsRank["Computer Science"] += 5;
@@ -788,13 +749,10 @@ class Algorithm {
           majorsRank["Law/Political Science"] += 5;
           majorsRank["Art/Design"] += -7;
           majorsRank["Environmental Science"] += 3;
-
         }
-
       }
       break;
       case "I stay up-to-date with the news and media.": {
-
         if (score == 2) {
           majorsRank["Computer Science"] += 4;
           majorsRank["Math/Statistics"] += 1;
@@ -808,7 +766,6 @@ class Algorithm {
           majorsRank["Law/Political Science"] += 7;
           majorsRank["Art/Design"] += 4;
           majorsRank["Environmental Science"] += 5;
-
         }
         else if(score == 1) {
           majorsRank["Computer Science"] += 4;
@@ -865,15 +822,10 @@ class Algorithm {
           majorsRank["Law/Political Science"] += -5;
           majorsRank["Art/Design"] += 0;
           majorsRank["Environmental Science"] += 2;
-
         }
-
       }
       break;
-
-
       case "I would describe myself as a very hands-on person.": {
-
         if (score == 2) {
           majorsRank["Computer Science"] += 3;
           majorsRank["Math/Statistics"] += 0;
@@ -887,7 +839,6 @@ class Algorithm {
           majorsRank["Law/Political Science"] += 0;
           majorsRank["Art/Design"] += 4;
           majorsRank["Environmental Science"] += 6;
-
         }
         else if(score == 1) {
           majorsRank["Computer Science"] += 3;
@@ -944,16 +895,10 @@ class Algorithm {
           majorsRank["Law/Political Science"] += 5;
           majorsRank["Art/Design"] += 0;
           majorsRank["Environmental Science"] += 0;
-
         }
-
       }
       break;
-
-
-
       case "I feel comfortable using new technologies.": {
-
         if (score == 2) {
           majorsRank["Computer Science"] += 10;
           majorsRank["Math/Statistics"] += 7;
@@ -967,7 +912,6 @@ class Algorithm {
           majorsRank["Law/Political Science"] += 0;
           majorsRank["Art/Design"] += 5;
           majorsRank["Environmental Science"] += 5;
-
         }
         else if(score == 1) {
           majorsRank["Computer Science"] += 8;
@@ -1024,14 +968,10 @@ class Algorithm {
           majorsRank["Law/Political Science"] += 5;
           majorsRank["Art/Design"] += 0;
           majorsRank["Environmental Science"] += 0;
-
         }
-
       }
       break;
-
       case "I like working with children.": {
-
         if (score == 2) {
           majorsRank["Computer Science"] += 0;
           majorsRank["Math/Statistics"] += 0;
@@ -1045,7 +985,6 @@ class Algorithm {
           majorsRank["Law/Political Science"] += 2;
           majorsRank["Art/Design"] += 5;
           majorsRank["Environmental Science"] += 0;
-
         }
         else if(score == 1) {
           majorsRank["Computer Science"] += 0;
@@ -1102,33 +1041,20 @@ class Algorithm {
           majorsRank["Law/Political Science"] += 0;
           majorsRank["Art/Design"] += -2;
           majorsRank["Environmental Science"] += 0;
-
         }
-
       }
       break;
-
-
-
-
-
-      default: {
-
-      }
+      default: { }
       break;
     }
-
-
   }
 
   List Rank() {
-
     int count = 0;
     quizPairs.forEach((k, v) => {
       updateMajor(k, v),
       print("The count is ${count}"),
       count += 1,
-
     });
 
     print(majorsRank["Biology"]);
@@ -1149,15 +1075,12 @@ class Algorithm {
       sortedKeys.add(largestKey);
     }
 
-
-
     return sortedKeys;
   }
 
   String getResults() {
 
     List list = Rank();
-    // TODO: Get top 5 results and print them as strings
 
     String str = "";
     for(int i = 0; i < 5; i++) {
@@ -1165,8 +1088,8 @@ class Algorithm {
       str += list[i];
       str += ") ";
     }
-
     print(str);
     return str;
   }
+
 }
